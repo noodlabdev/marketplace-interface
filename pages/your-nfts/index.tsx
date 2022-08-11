@@ -1,22 +1,17 @@
-import {
-	useCallback,
-	useEffect, // useMemo,
-	useState
-} from 'react'
-
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
-import { Button, Container, Grid } from '@mui/material'
+import { useQuery } from '@apollo/client'
+import { Container, Grid } from '@mui/material'
 import { Title } from 'components'
 import {
 	YourDomainCard,
 	YourNFTCardProps
 } from 'components/Card/YourDomainCard'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
+import { GET_YOUR_NFT } from 'services/apollo/queries'
 import styled from 'styled-components'
 import { BgMatrixRight, Section } from 'styles'
-import { getOwnerDomains } from 'utils/callContract'
 
 const TitleCenter = styled(Title)`
 	text-align: center;
@@ -35,56 +30,6 @@ const BgMatrixRightCustom = styled(BgMatrixRight)`
 	min-height: calc(100vh - 316px);
 `
 
-const ButtonMain = styled(Button)`
-	min-width: 260px;
-	padding: 12px 24px;
-	background-color: ${({ theme }) => theme?.colors?.blue4};
-	box-shadow: 0px 20px 40px rgba(0, 43, 90, 0.3);
-	text-transform: capitalize;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 28px;
-	transition: all 0.2s linear;
-	&:hover {
-		background-color: ${({ theme }) => theme?.colors?.pink4};
-	}
-
-	&.sorry-btn {
-		padding: 18px 70px;
-	}
-
-	@media screen and (max-width: 1700px) {
-		padding: 11px 22px;
-		min-width: 240px;
-	}
-	@media screen and (max-width: 900px) {
-		padding: 10px 22px;
-		min-width: 220px;
-		&.sorry-btn {
-			padding: 18px 50px;
-		}
-	}
-	@media screen and (max-width: 500px) {
-		padding: 12px 22px;
-		min-width: 200px;
-		&.sorry-btn {
-			padding: 18px 40px;
-		}
-	}
-`
-const ButtonMainWrap = styled.div`
-	text-align: center;
-	margin-top: 50px;
-
-	@media screen and (max-width: 1700px) {
-		margin-top: 40px;
-	}
-	@media screen and (max-width: 900px) {
-		margin-top: 30px;
-	}
-`
 const SorryContainer = styled.div`
 	padding: 40px 0;
 	text-align: center;
@@ -131,32 +76,22 @@ const SorryContainer = styled.div`
 `
 
 const YourDomain: NextPage = () => {
-	const { account, library } = useActiveWeb3React()
+	const { account } = useActiveWeb3React()
 
-	const [nfts, setNFTs] = useState<YourNFTCardProps[]>([])
+	const { loading, error, data, refetch } = useQuery(GET_YOUR_NFT, {
+		variables: { account },
+		pollInterval: 6000
+	})
 
-	const getDomains = useCallback(async () => {
-		if (!account || !library) return
-		try {
-			const nfts = await getOwnerDomains(library, account)
-			setNFTs(nfts)
-			// setDomains(domains)
-			// setTLDs(tlds)
-		} catch (error) {
-			console.error(error)
-		}
-	}, [account, library])
-
-	useEffect(() => {
-		getDomains()
-	}, [getDomains])
+	if (loading) return <div>Loading...</div>
+	if (error) return <div>Error fetch subgraphs</div>
 
 	return (
 		<>
 			<BgMatrixRightCustom>
 				<Section>
 					<Container>
-						{nfts.length ? (
+						{data.nfts.length ? (
 							<>
 								<TitleCenter
 									size="md"
@@ -169,20 +104,17 @@ const YourDomain: NextPage = () => {
 									columns={12}
 									justifyContent="center"
 									spacing={4}>
-									{nfts.map((domain: YourNFTCardProps, index?: number) => (
-										<Grid item xl={4} lg={6} md={6} sm={10} xs={12} key={index}>
-											<YourDomainCard
-												id={domain.id}
-												tokenURI={domain.tokenURI}
-											/>
+									{data.nfts.map((nft: YourNFTCardProps, index?: number) => (
+										<Grid item xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
+											<YourDomainCard nft={nft} _refetch={refetch} />
 										</Grid>
 									))}
 								</Grid>
-								<ButtonMainWrap>
+								{/* <ButtonMainWrap>
 									<ButtonMain variant="contained" size="medium">
 										Save
 									</ButtonMain>
-								</ButtonMainWrap>
+								</ButtonMainWrap> */}
 							</>
 						) : (
 							<SorryContainer>
@@ -197,16 +129,16 @@ const YourDomain: NextPage = () => {
 									/>
 								</div>
 								<TitleCenter className="sorry-title">
-									You Don’t have any domains yet
+									You don’t have any NFT yet
 								</TitleCenter>
-								<ButtonMainWrap className="sorry-btn-wrap">
+								{/* <ButtonMainWrap className="sorry-btn-wrap">
 									<ButtonMain
 										className="sorry-btn"
 										variant="contained"
 										size="large">
 										Get your First Domain
 									</ButtonMain>
-								</ButtonMainWrap>
+								</ButtonMainWrap> */}
 							</SorryContainer>
 						)}
 					</Container>

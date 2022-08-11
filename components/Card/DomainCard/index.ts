@@ -8,6 +8,7 @@ export interface DomainCardProps {
 	onClickContainer?: MouseEventHandler<HTMLDivElement>
 	domain?: any
 	buttonProps?: Omit<ButtonProps, 'variant' | 'fullWidth'>
+	_refetch?: () => any
 }
 
 export { DomainCard }

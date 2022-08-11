@@ -8,12 +8,10 @@ import { StyledLogo } from 'styles'
 import {
 	StyledHeader,
 	StyledHeaderButtonContainer,
-	StyledHeaderHamburger,
 	StyledHeaderMenuContainer,
 	StyledHeaderWrapper
 } from './Header.styled'
 import HeaderAccount from './HeaderAccount'
-import HeaderHamburger from './HeaderHamburger'
 import HeaderMenu from './HeaderMenu'
 import HeaderMobile from './HeaderMobile'
 
@@ -49,12 +47,12 @@ const Header: FC = () => {
 						</StyledHeaderMenuContainer>
 						<StyledHeaderButtonContainer>
 							<HeaderAccount />
-							<StyledHeaderHamburger>
+							{/* <StyledHeaderHamburger>
 								<HeaderHamburger
 									isClose={openMobile}
 									onClick={() => setOpenMobile(!openMobile)}
 								/>
-							</StyledHeaderHamburger>
+							</StyledHeaderHamburger> */}
 						</StyledHeaderButtonContainer>
 					</StyledHeaderWrapper>
 				</Container>

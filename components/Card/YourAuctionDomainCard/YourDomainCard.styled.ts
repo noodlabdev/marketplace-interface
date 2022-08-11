@@ -81,7 +81,7 @@ export const OnSaleWrap = styled.div`
 	@media screen and (max-width: 1400px) {
 	}
 	@media screen and (max-width: 900px) {
-		justify-content: left;
+		justify-content: center;
 		& > .sale-title {
 			padding: 0 6px 0 0;
 		}

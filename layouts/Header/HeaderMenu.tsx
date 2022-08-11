@@ -1,8 +1,6 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo } from 'react'
 
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-
+// import { useRouter } from 'next/router'
 import cn from 'classnames'
 import styled from 'styled-components'
 
@@ -34,7 +32,7 @@ export const StyledHeaderMenu = styled.ul`
 					bottom: 0;
 					width: 0;
 					height: 2px;
-					background-color: ${({ theme }) => theme?.colors?.pink4 || ''};
+					background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
 					transform: translateX(-50%);
 					transition: 0.2s linear all;
 				}
@@ -88,30 +86,29 @@ export const StyledHeaderMenu = styled.ul`
 	}
 `
 
-const menus = [
-	{ key: 'home', title: 'Home', route: '/' },
-	{ key: 'market-place', title: 'Marketplace', route: '/marketplace' },
-	{ key: 'our-team', title: 'Our Team', route: '/our-team' },
-	{ key: 'download', title: 'Download', route: '/download' },
-	{ key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
-]
+// const menus = [
+// 	{ key: 'home', title: 'Home', route: '/' },
+// 	{ key: 'market-place', title: 'Marketplace', route: '/marketplace' },
+// 	{ key: 'our-team', title: 'Our Team', route: '/our-team' },
+// 	{ key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
+// ]
 
 export interface HeaderMenuProps {
 	className?: string
 }
 
 const HeaderMenu: FC<HeaderMenuProps> = ({ ...props }) => {
-	const router = useRouter()
-	const activeFunction = useCallback(
-		(compareRouter: string) => {
-			return router.asPath === compareRouter
-		},
-		[router.asPath]
-	)
+	// const router = useRouter()
+	// const activeFunction = useCallback(
+	// 	(compareRouter: string) => {
+	// 		return router.asPath === compareRouter
+	// 	},
+	// 	[router.asPath]
+	// )
 
 	return (
 		<StyledHeaderMenu {...props} className={cn('menu', props?.className)}>
-			{menus.map((menu) => (
+			{/* {menus.map((menu) => (
 				<li
 					key={menu.key}
 					className={cn({ active: activeFunction(menu.route) })}>
@@ -119,7 +116,7 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ ...props }) => {
 						<a>{menu.title}</a>
 					</Link>
 				</li>
-			))}
+			))} */}
 		</StyledHeaderMenu>
 	)
 }

@@ -45,7 +45,6 @@ export const StyledHeader = styled.header`
 		}
 		${StyledHeaderButtonContainer} {
 			.header--account {
-				display: none;
 			}
 		}
 		${StyledHeaderHamburger} {

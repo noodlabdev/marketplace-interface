@@ -21,3 +21,8 @@ export const NFT_METHODS: { [key: string]: string } = {
 	tokenURI: 'tokenURI',
 	approve: 'approve'
 }
+
+export const SALE = {
+	AUCTION: '1',
+	FIXED_PRICE: '2'
+}

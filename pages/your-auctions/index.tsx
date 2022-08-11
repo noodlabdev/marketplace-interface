@@ -1,39 +1,148 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
+import Image from 'next/image'
 
 import { useQuery } from '@apollo/client'
+import { Container, Grid } from '@mui/material'
+import { Title } from 'components'
+import { YourDomainCard } from 'components/Card/YourAuctionDomainCard'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { GET_AUCTIONS_BIDED } from 'services/apollo/queries'
+import styled from 'styled-components'
+import { BgMatrixRight, Section } from 'styles'
 
-const YourAuctions: NextPage = () => {
+const TitleCenter = styled(Title)`
+	text-align: center;
+	margin-bottom: 40px;
+	@media screen and (max-width: 1700px) {
+		margin-bottom: 40px;
+	}
+	@media screen and (max-width: 1400px) {
+		margin-bottom: 34px;
+	}
+	@media screen and (max-width: 900px) {
+		margin-bottom: 22px;
+	}
+`
+const BgMatrixRightCustom = styled(BgMatrixRight)`
+	min-height: calc(100vh - 316px);
+`
+
+const SorryContainer = styled.div`
+	padding: 40px 0;
+	text-align: center;
+	& > .sorry-img {
+		position: relative;
+		width: auto;
+		height: 300px;
+	}
+	& > .sorry-title {
+		max-width: 50%;
+		margin: 40px auto 0;
+	}
+	@media screen and (max-width: 1700px) {
+		padding: 20px 0;
+		& > .sorry-img {
+			height: 260px;
+		}
+	}
+	@media screen and (max-width: 1400px) {
+		& > .sorry-img {
+			height: 220px;
+		}
+		& > .sorry-title {
+			max-width: 40%;
+		}
+	}
+	@media screen and (max-width: 900px) {
+		& > .sorry-img {
+			height: 200px;
+		}
+		& > .sorry-title {
+			margin-top: 30px;
+			max-width: 53%;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		& > .sorry-img {
+			height: 180px;
+		}
+		& > .sorry-title {
+			max-width: 80%;
+		}
+	}
+`
+
+const YourDomain: NextPage = () => {
 	const { account } = useActiveWeb3React()
 
-	const { loading, error, data } = useQuery(GET_AUCTIONS_BIDED, {
+	const { loading, error, data, refetch } = useQuery(GET_AUCTIONS_BIDED, {
 		variables: { account },
-		pollInterval: 12000
+		pollInterval: 6000
 	})
 
-	if (loading) return <div style={{ color: 'white' }}>Loading...</div>
-	if (error) return <div style={{ color: 'white' }}>Error fetch subgraphs</div>
+	if (loading) return <div>Loading...</div>
+	if (error) return <div>Error fetch subgraphs</div>
 
 	return (
-		<div style={{ color: 'white' }}>
-			<div>Your Auctions</div>
-			<div>
-				{data.userBids.length ? (
-					data.userBids.map((bid: any, idx: number) => (
-						<div key={idx}>
-							<div>{bid.auction.nftUri}</div>
-							<div>Highest bid {bid.auction.hightestBid}</div>
-							<div>Highest bider {bid.auction.highestBidder}</div>
-							<div>End: {bid.auction.end}</div>
-							{!bid.claimed && <button>Claim</button>}
-						</div>
-					))
-				) : (
-					<div>No auctions bided</div>
-				)}
-			</div>
-		</div>
+		<>
+			<BgMatrixRightCustom>
+				<Section>
+					<Container>
+						{data.userBids.length ? (
+							<>
+								<TitleCenter
+									size="md"
+									headingType="h4"
+									className="your-domain-title">
+									Your NFT
+								</TitleCenter>
+								<Grid
+									container
+									columns={12}
+									justifyContent="center"
+									spacing={4}>
+									{data.userBids.map((bid: any, index?: number) => (
+										<Grid item xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
+											<YourDomainCard
+												auction={bid.auction}
+												nft={bid.auction.nft}
+												_refetch={refetch}
+											/>
+										</Grid>
+									))}
+								</Grid>
+							</>
+						) : (
+							<SorryContainer>
+								<div className="sorry-img">
+									<Image
+										priority
+										src="/images/your-domain-state-2.png"
+										alt="Huta Web Logo"
+										layout="fill"
+										objectFit="contain"
+										objectPosition="center center"
+									/>
+								</div>
+								<TitleCenter className="sorry-title">
+									You don’t have any auction bids
+								</TitleCenter>
+							</SorryContainer>
+						)}
+					</Container>
+				</Section>
+			</BgMatrixRightCustom>
+		</>
 	)
 }
-export default YourAuctions
+
+export async function getStaticProps() {
+	return {
+		props: {
+			title: 'Your Domain',
+			description: 'This is a description for Your Domain page'
+		}
+	}
+}
+
+export default YourDomain

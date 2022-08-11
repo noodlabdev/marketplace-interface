@@ -18,39 +18,23 @@ export async function callContract(
 	args: any[],
 	overrides: { [key: string]: any } = {}
 ) {
-	try {
-		const tx = await contract[method](...args, {
-			...overrides
-		})
-		if (typeof tx.wait !== 'function') return tx
-		const res = await tx.wait()
-		return res
-	} catch (error) {
-		console.error(error)
-		throw error
-	}
+	const tx = await contract[method](...args, {
+		...overrides
+	})
+	if (typeof tx.wait !== 'function') return tx
+	const res = await tx.wait()
+	return res
 }
 
 export async function callStaticContract(
 	contract: Contract,
 	method: string,
 	args: any[],
-	overrides = {}
+	overrides: { [key: string]: any } = {}
 ) {
-	try {
-		// console.log(contract, method, args);
-		const staticTx = await contract.callStatic[method](...args, {
-			...overrides
-		})
-		// console.log(staticTx);
-		if (typeof staticTx.wait !== 'function') return staticTx
-		const res = await staticTx.wait()
-		console.log(res)
-		return res
-	} catch (error) {
-		console.error(error)
-		throw error
-	}
+	return contract.callStatic[method](...args, {
+		...overrides
+	})
 }
 
 export function getMulticallContract(library: Web3Provider, account?: string) {

@@ -170,12 +170,12 @@ const HeaderAccount: FC = () => {
 							<Link href="/on-sale">
 								<a className="menu--item">On Sale</a>
 							</Link>
-						</StyledHeaderMenuItem>
+						</StyledHeaderMenuItem> */}
 						<StyledHeaderMenuItem>
 							<Link href="/your-auctions">
 								<a className="menu--item">Your Actions</a>
 							</Link>
-						</StyledHeaderMenuItem> */}
+						</StyledHeaderMenuItem>
 						{/* <StyledHeaderMenuItem>
 							<span className="menu--item">Make a Profile</span>
 						</StyledHeaderMenuItem> */}

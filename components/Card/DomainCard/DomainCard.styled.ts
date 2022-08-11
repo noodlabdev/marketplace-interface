@@ -14,7 +14,53 @@ export const DomainCardButton = styled(Button)`
 	margin-top: 40px;
 	border-radius: ${({ theme }) => theme?.borderRadiusBase};
 	box-shadow: 0px 15px 30px 0px #0c04144d;
-	background-color: ${({ theme }) => theme?.colors?.darkPurple4};
+	background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+	font-weight: 500;
+	text-transform: inherit;
+	media screen and (max-width: 1700px) {
+		max-width: 230px;
+		padding: 10px 24px;
+		margin-top: 33px;
+	}
+	@media screen and (max-width: 1400px) {
+		max-width: 190px;
+		margin-top: 27px;
+	}
+	@media screen and (max-width: 992px) {
+		margin-top: 40px;
+	}
+`
+
+export const DomainCardCancelButton = styled(Button)`
+	max-width: 280px;
+	padding: 11px 24px;
+	margin-top: 40px;
+	border-radius: ${({ theme }) => theme?.borderRadiusBase};
+	box-shadow: 0px 15px 30px 0px #0c04144d;
+	background: linear-gradient(310deg, #d68d94 25%, #e17b52 100%);
+	font-weight: 500;
+	text-transform: inherit;
+	media screen and (max-width: 1700px) {
+		max-width: 230px;
+		padding: 10px 24px;
+		margin-top: 33px;
+	}
+	@media screen and (max-width: 1400px) {
+		max-width: 190px;
+		margin-top: 27px;
+	}
+	@media screen and (max-width: 992px) {
+		margin-top: 40px;
+	}
+`
+
+export const DomainCardChangeButton = styled(Button)`
+	max-width: 280px;
+	padding: 11px 24px;
+	margin-top: 40px;
+	border-radius: ${({ theme }) => theme?.borderRadiusBase};
+	box-shadow: 0px 15px 30px 0px #0c04144d;
+	background: linear-gradient(310deg,#1896d2 25%,#1866d2 100%)
 	font-weight: 500;
 	text-transform: inherit;
 	media screen and (max-width: 1700px) {
@@ -34,16 +80,7 @@ export const DomainCardButton = styled(Button)`
 export const DomainCardContainer = styled.div`
 	position: relative;
 	z-index: 0;
-	padding: 40px 45px;
+	padding: 16px;
 	text-align: center;
 	${cssBorderGradientHover}
-	@media screen and (max-width: 1700px) {
-		padding: 33px 35px;
-	}
-	@media screen and (max-width: 1400px) {
-		padding: 27px 30px;
-	}
-	@media screen and (max-width: 992px) {
-		padding: 40px 45px;
-	}
 `

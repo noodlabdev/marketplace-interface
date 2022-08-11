@@ -2,23 +2,22 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+// import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import { Modal } from '@mui/material'
-import { Switch } from 'components/Switch'
-// import { DOMAIN_TYPE } from 'constants/constants'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
+import { createAuction, createFixedPrice } from 'utils/callContract'
 
-// import { createAuction, createFixedPrice } from 'utils/callContract'
 import { YourNFTCardProps } from '.'
+import { DomainCardButton } from '../DomainCard/DomainCard.styled'
 import {
-	ButtonSetting,
-	OnSaleWrap, // YourDomainCardName,
+	// ButtonSetting,
+	OnSaleWrap,
+	YourDomainCardName,
 	YourDomainCardWrap
 } from './YourDomainCard.styled'
 
-function YourDomainCard({ id, tokenURI }: YourNFTCardProps) {
+function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 	const { account, library } = useActiveWeb3React()
-	console.log(id)
 	// fixed price
 	const [open, setOpen] = useState<boolean>(false)
 	const [price, setPrice] = useState<string>('')
@@ -45,12 +44,11 @@ function YourDomainCard({ id, tokenURI }: YourNFTCardProps) {
 		if (!price) return alert('enter price and duration')
 
 		try {
-			console.log('submitting')
-			// const tx = await createFixedPrice(library, account, type, id, price)
-			// console.log(tx)
-			alert('create fixed price success')
+			await createFixedPrice(library, account, nft.id, price)
+			_refetch && _refetch()
+			alert('Create fixed price success')
 		} catch (error: any) {
-			alert(error.message)
+			error.reason ? alert(error.reason) : alert('ERROR')
 		}
 	}
 
@@ -59,20 +57,18 @@ function YourDomainCard({ id, tokenURI }: YourNFTCardProps) {
 		if (!startPrice || !duration) return alert('enter price and duration')
 
 		try {
-			console.log('submitting')
-			// const tx = await createAuction(
-			// 	library,
-			// 	account,
-			// 	DOMAIN_TYPE.Domain,
-			// 	id,
-			// 	startPrice,
-			// 	minBidIncrement,
-			// 	duration
-			// )
-			// console.log(tx)
+			await createAuction(
+				library,
+				account,
+				nft.id,
+				startPrice,
+				minBidIncrement,
+				duration
+			)
+			_refetch && _refetch()
 			alert('create auction success')
 		} catch (error: any) {
-			alert(error.message)
+			error.reason ? alert(error.reason) : alert('ERROR')
 		}
 	}
 
@@ -86,6 +82,7 @@ function YourDomainCard({ id, tokenURI }: YourNFTCardProps) {
 				<div>
 					<input
 						placeholder="price"
+						type="number"
 						value={price}
 						onChange={(e) => setPrice(e.target.value)}
 					/>
@@ -118,21 +115,21 @@ function YourDomainCard({ id, tokenURI }: YourNFTCardProps) {
 			</Modal>
 			<YourDomainCardWrap>
 				<div className="yd-card-left">
-					{/* <YourDomainCardName>{tokenURI}</YourDomainCardName> */}
-					<Image src={tokenURI} alt="nft" height={400} width={400} />
+					<Image src={nft.nftURI} alt="nft" height={400} width={400} />
+					<YourDomainCardName>ID: {nft.id}</YourDomainCardName>
 					<OnSaleWrap>
-						<button onClick={handleOpen}>create fixed price</button>
-						<button onClick={handleOpenAuction}>create auction</button>
-						{/* <span className="sale-title">On sale</span>
-						<Switch /> */}
+						<DomainCardButton
+							variant="contained"
+							onClick={handleOpen}
+							children={'Sell'} // eslint-disable-line react/no-children-prop
+						/>
+						<DomainCardButton
+							variant="contained"
+							onClick={handleOpenAuction}
+							children={'Auction'} // eslint-disable-line react/no-children-prop
+						/>
 					</OnSaleWrap>
 				</div>
-
-				{/* <ButtonSetting
-					variant="contained"
-					size="medium"
-					endIcon={<SettingsOutlinedIcon />}
-				/> */}
 			</YourDomainCardWrap>
 		</>
 	)
