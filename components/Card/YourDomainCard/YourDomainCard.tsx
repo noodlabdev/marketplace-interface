@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
+import TransactionLoading from 'components/TransactionLoading'
 // import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
-import { Modal } from '@mui/material'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { createAuction, createFixedPrice } from 'utils/callContract'
 
@@ -18,45 +18,58 @@ import {
 
 function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 	const { account, library } = useActiveWeb3React()
-	// fixed price
-	const [open, setOpen] = useState<boolean>(false)
-	const [price, setPrice] = useState<string>('')
-	// auction
-	const [openAuction, setOpenAuction] = useState<boolean>(false)
-	const [startPrice, setStartPrice] = useState<string>('')
-	const [minBidIncrement, setMinBidIncrement] = useState<string>('')
-	const [duration, setDuration] = useState<string>('')
+
+	const [submitting, setSubmitting] = useState<boolean>(false)
+
+	// // fixed price
+	// const [open, setOpen] = useState<boolean>(false)
+	// const [price, setPrice] = useState<string>('')
+	// // auction
+	// const [openAuction, setOpenAuction] = useState<boolean>(false)
+	// const [startPrice, setStartPrice] = useState<string>('')
+	// const [minBidIncrement, setMinBidIncrement] = useState<string>('')
+	// const [duration, setDuration] = useState<string>('')
 
 	// const handleChange = (_: SyntheticEvent<Element, Event>, value: DOMAIN) => {
 	// 	setTab(value)
 	// }
 
-	// handle auction modal
-	const handleOpen = () => setOpen(true)
-	const handleClose = () => setOpen(false)
+	// // handle auction modal
+	// const handleOpen = () => setOpen(true)
+	// const handleClose = () => setOpen(false)
 
-	// handle auction modal
-	const handleOpenAuction = () => setOpenAuction(true)
-	const handleCloseAuction = () => setOpenAuction(false)
+	// // handle auction modal
+	// const handleOpenAuction = () => setOpenAuction(true)
+	// const handleCloseAuction = () => setOpenAuction(false)
 
 	const handleCreateFixedPrice = async () => {
 		if (!account || !library) return alert('connect wallet before')
-		if (!price) return alert('enter price and duration')
+		const price = prompt('Enter your price')
+		if (!price) return
 
 		try {
+			setSubmitting(true)
 			await createFixedPrice(library, account, nft.id, price)
 			_refetch && _refetch()
 			alert('Create fixed price success')
+			setSubmitting(false)
 		} catch (error: any) {
-			error.reason ? alert(error.reason) : alert('ERROR')
+			error.reason && alert(error.reason)
+			setSubmitting(false)
 		}
 	}
 
 	const handleCreateAuction = async () => {
 		if (!account || !library) return alert('connect wallet before')
-		if (!startPrice || !duration) return alert('enter price and duration')
+		const startPrice = prompt('Enter start price of auction (BNB)')
+		if (!startPrice) return
+		const duration = prompt('Enter duration of auction (days)')
+		if (!duration) return
+		const minBidIncrement = prompt('Enter min bid  increment of auction (BNB)')
+		if (!minBidIncrement) return
 
 		try {
+			setSubmitting(true)
 			await createAuction(
 				library,
 				account,
@@ -67,14 +80,16 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 			)
 			_refetch && _refetch()
 			alert('create auction success')
+			setSubmitting(false)
 		} catch (error: any) {
-			error.reason ? alert(error.reason) : alert('ERROR')
+			error.reason && alert(error.reason)
+			setSubmitting(false)
 		}
 	}
 
 	return (
 		<>
-			<Modal
+			{/* <Modal
 				open={open}
 				onClose={handleClose}
 				aria-labelledby="modal-modal-title"
@@ -112,7 +127,8 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 					/>
 					<button onClick={handleCreateAuction}>create auction</button>
 				</div>
-			</Modal>
+			</Modal> */}
+			<TransactionLoading loading={submitting} />
 			<YourDomainCardWrap>
 				<div className="yd-card-left">
 					<Image src={nft.nftURI} alt="nft" height={400} width={400} />
@@ -120,12 +136,12 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 					<OnSaleWrap>
 						<DomainCardButton
 							variant="contained"
-							onClick={handleOpen}
+							onClick={handleCreateFixedPrice}
 							children={'Sell'} // eslint-disable-line react/no-children-prop
 						/>
 						<DomainCardButton
 							variant="contained"
-							onClick={handleOpenAuction}
+							onClick={handleCreateAuction}
 							children={'Auction'} // eslint-disable-line react/no-children-prop
 						/>
 					</OnSaleWrap>

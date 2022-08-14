@@ -7,6 +7,7 @@ import { formatEther } from '@ethersproject/units'
 import { Container, Grid, Tab, Tabs } from '@mui/material'
 import { Description, TabPanel, TopPage } from 'components'
 import { DomainCard } from 'components/Card/DomainCard'
+import TransactionLoading from 'components/TransactionLoading'
 import { NFT_BID_TYPE } from 'constants/constants'
 import { NATIVE_COIN } from 'constants/networks'
 // import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -119,7 +120,7 @@ const Home: NextPage = () => {
 		}
 	}
 
-	if (loading) return <div>Loading...</div>
+	if (loading) return <TransactionLoading loading={true} />
 	if (error) return <div>Error fetch subgraphs</div>
 
 	return (

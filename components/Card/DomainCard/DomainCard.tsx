@@ -1,8 +1,9 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import Image from 'next/image'
 
 import { formatEther } from '@ethersproject/units'
+import TransactionLoading from 'components/TransactionLoading'
 import { SALE } from 'constants/constants'
 import { NATIVE_COIN } from 'constants/networks'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -46,6 +47,8 @@ const DomainCard: FC<DomainCardProps> = ({
 }) => {
 	const { account, library } = useActiveWeb3React()
 
+	const [submitting, setSubmitting] = useState<boolean>(false)
+
 	const handleBid = async () => {
 		if (!library || !account) return alert('Please connect wallet')
 		if (!domain.id || !domain.nft || !domain.hightestBid)
@@ -58,11 +61,14 @@ const DomainCard: FC<DomainCardProps> = ({
 			if (!price) return
 		}
 		try {
+			setSubmitting(true)
 			await placeBid(library, account, domain.id, price)
 			restProps._refetch && restProps._refetch()
 			alert(message)
+			setSubmitting(false)
 		} catch (error: any) {
-			error.reason ? alert(error.reason) : alert('ERROR')
+			error.reason && alert(error.reason)
+			setSubmitting(false)
 		}
 	}
 
@@ -70,16 +76,20 @@ const DomainCard: FC<DomainCardProps> = ({
 		if (!account || !library) return alert('connect wallet before')
 
 		try {
+			setSubmitting(true)
 			await cancel(library, account, domain.id)
 			restProps._refetch && restProps._refetch()
 			alert('Cancel success')
+			setSubmitting(false)
 		} catch (error: any) {
-			error.reason ? alert(error.reason) : alert('ERROR')
+			error.reason && alert(error.reason)
+			setSubmitting(false)
 		}
 	}
 
 	return (
 		<DomainCardContainer onClick={onClickContainer} {...restProps}>
+			<TransactionLoading loading={submitting} />
 			{domain.nft && (
 				<>
 					<Image

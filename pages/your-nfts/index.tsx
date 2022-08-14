@@ -8,6 +8,7 @@ import {
 	YourDomainCard,
 	YourNFTCardProps
 } from 'components/Card/YourDomainCard'
+import TransactionLoading from 'components/TransactionLoading'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { GET_YOUR_NFT } from 'services/apollo/queries'
 import styled from 'styled-components'
@@ -83,7 +84,7 @@ const YourDomain: NextPage = () => {
 		pollInterval: 6000
 	})
 
-	if (loading) return <div>Loading...</div>
+	if (loading) return <TransactionLoading loading={true} />
 	if (error) return <div>Error fetch subgraphs</div>
 
 	return (

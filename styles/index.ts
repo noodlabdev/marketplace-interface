@@ -15,7 +15,7 @@ export const StyledLogo = styled.a`
 	height: 45px;
 	cursor: pointer;
 	&:hover {
-		color: #378471;
+		color: #378471 !important;
 	}
 	img {
 		width: 50px;

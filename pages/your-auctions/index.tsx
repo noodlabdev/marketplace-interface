@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client'
 import { Container, Grid } from '@mui/material'
 import { Title } from 'components'
 import { YourDomainCard } from 'components/Card/YourAuctionDomainCard'
+import TransactionLoading from 'components/TransactionLoading'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { GET_AUCTIONS_BIDED } from 'services/apollo/queries'
 import styled from 'styled-components'
@@ -80,7 +81,7 @@ const YourDomain: NextPage = () => {
 		pollInterval: 6000
 	})
 
-	if (loading) return <div>Loading...</div>
+	if (loading) return <TransactionLoading loading={true} />
 	if (error) return <div>Error fetch subgraphs</div>
 
 	return (
