@@ -41,7 +41,7 @@ const StyledHeaderButton = styled(Button)<ButtonProps>`
 		height: 44px;
 		border: 1px solid #fff;
 		border-radius: 50%;
-		background-color: ${({ theme }) => theme?.colors?.blue4 || ''};
+		background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
 	}
 `
 

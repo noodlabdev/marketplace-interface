@@ -10,10 +10,27 @@ body {
 
 export const StyledLogo = styled.a`
 	position: relative;
-	display: inline-block;
-	width: 105px;
+	display: flex;
+	align-items: center;
 	height: 45px;
 	cursor: pointer;
+	&:hover {
+		color: #378471;
+	}
+	img {
+		width: 50px;
+		aspect-ratio: auto 50 / 50;
+		height: 50px;
+	}
+	div {
+		margin-left: 12px;
+		font-size: 24px;
+	}
+	@media screen and (max-width: 500px) {
+		div {
+			display: none;
+		}
+	}
 `
 
 export const BgGradient = styled.div<{ bgImage?: string }>`

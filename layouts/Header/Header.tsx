@@ -39,7 +39,8 @@ const Header: FC = () => {
 						<Link href="/" passHref>
 							<StyledLogo>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/logo.svg" alt="" />
+								<img src="/logo.svg" alt="logo" />
+								<div>Floki Marketplace</div>
 							</StyledLogo>
 						</Link>
 						<StyledHeaderMenuContainer>
