@@ -40,7 +40,7 @@ const Header: FC = () => {
 							<StyledLogo>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/logo.svg" alt="logo" />
-								<div>Floki Marketplace</div>
+								<div>FLOKI MARKETPLACE</div>
 							</StyledLogo>
 						</Link>
 						<StyledHeaderMenuContainer>

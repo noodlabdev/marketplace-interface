@@ -38,7 +38,7 @@ const Footer: FC = () => {
 				<Divider className="divider" />
 				<div className="footer-version">
 					<p className="footer-description">
-						© {new Date().getFullYear()} Floki Marketplace
+						© {new Date().getFullYear()} FLOKI MARKETPLACE
 					</p>
 				</div>
 			</Container>

@@ -6,12 +6,14 @@ import Description from '../../Description'
 
 export const DomainCardName = styled(Description)`
 	font-weight: 600;
+	margin-top: 12px;
+	font-size: 20px;
 `
 
 export const DomainCardButton = styled(Button)`
 	max-width: 280px;
 	padding: 11px 24px;
-	margin-top: 40px;
+	margin-top: 20px;
 	border-radius: ${({ theme }) => theme?.borderRadiusBase};
 	box-shadow: 0px 15px 30px 0px #0c04144d;
 	background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
@@ -20,14 +22,14 @@ export const DomainCardButton = styled(Button)`
 	media screen and (max-width: 1700px) {
 		max-width: 230px;
 		padding: 10px 24px;
-		margin-top: 33px;
+		margin-top: 18px;
 	}
 	@media screen and (max-width: 1400px) {
 		max-width: 190px;
-		margin-top: 27px;
+		margin-top: 16px;
 	}
 	@media screen and (max-width: 992px) {
-		margin-top: 40px;
+		margin-top: 12px;
 	}
 `
 

@@ -44,7 +44,7 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 
 	const handleCreateFixedPrice = async () => {
 		if (!account || !library) return alert('connect wallet before')
-		const price = prompt('Enter your price')
+		const price = prompt('Enter your price (BNB)')
 		if (!price) return
 
 		try {

@@ -87,7 +87,7 @@ const TabHead = styled.div`
 `
 
 const Home: NextPage = () => {
-	const [bidType, setBidType] = useState<NFT_BID_TYPE>(NFT_BID_TYPE.auction)
+	const [bidType, setBidType] = useState<NFT_BID_TYPE>(NFT_BID_TYPE.fixedPrice)
 
 	const { loading, error, data, refetch } = useQuery(GET_NFT_ON_SALE, {
 		pollInterval: 6000

@@ -91,13 +91,14 @@ const DomainCard: FC<DomainCardProps> = ({
 		<DomainCardContainer onClick={onClickContainer} {...restProps}>
 			<TransactionLoading loading={submitting} />
 			{domain.nft && (
-				<>
+				<div>
 					<Image
 						src={domain.nft.nftURI}
 						alt="nft"
 						height={400}
 						width={400}
 						layout="responsive"
+						objectPosition="center"
 					/>
 					<DomainCardName>ID: {domain.nft.id}</DomainCardName>
 					{domain.end && (
@@ -116,10 +117,10 @@ const DomainCard: FC<DomainCardProps> = ({
 									domain.highestBidder.length
 								)}`}
 							</DomainCardName>
-							<DomainCardName>Min Increment</DomainCardName>
+							{/* <DomainCardName>Min Increment</DomainCardName> */}
 						</div>
 					)}
-				</>
+				</div>
 			)}
 
 			{buttonProps && (
