@@ -17,7 +17,7 @@ function MemberCard({ member }: MemberCardProps) {
 				<Image
 					priority
 					src={member.avatarSrc}
-					alt="Huta Web Logo"
+					alt="Logo"
 					layout="fill"
 					objectFit="contain"
 					objectPosition="center center"

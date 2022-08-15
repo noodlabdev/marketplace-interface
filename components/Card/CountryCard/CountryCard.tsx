@@ -14,7 +14,7 @@ function CountryCard({ srcFlag, countryName }: CountryItemProps) {
 				<Image
 					priority
 					src={srcFlag}
-					alt="Huta Web Logo"
+					alt="Logo"
 					layout="fill"
 					objectPosition="left center"
 				/>

@@ -119,7 +119,7 @@ const YourDomain: NextPage = () => {
 									<Image
 										priority
 										src="/images/your-domain-state-2.png"
-										alt="Huta Web Logo"
+										alt="Logo"
 										layout="fill"
 										objectFit="contain"
 										objectPosition="center center"

@@ -16,7 +16,7 @@ const Footer: FC = () => {
 						<Link href="/" passHref>
 							<StyledLogo>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/logo.svg" alt="Huta Web Logo" className="image" />
+								<img src="/logo.svg" alt="Logo" className="image" />
 							</StyledLogo>
 						</Link>
 					</div>
@@ -37,7 +37,9 @@ const Footer: FC = () => {
 				</div>
 				<Divider className="divider" />
 				<div className="footer-version">
-					<p className="footer-description">© 2022 Huta</p>
+					<p className="footer-description">
+						© {new Date().getFullYear()} Floki Marketplace
+					</p>
 				</div>
 			</Container>
 		</FooterStyled>
