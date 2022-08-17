@@ -1,6 +1,8 @@
-import { FC, memo } from 'react'
+import { FC, memo, useCallback } from 'react'
 
-// import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import cn from 'classnames'
 import styled from 'styled-components'
 
@@ -86,29 +88,30 @@ export const StyledHeaderMenu = styled.ul`
 	}
 `
 
-// const menus = [
-// 	{ key: 'home', title: 'Home', route: '/' },
-// 	{ key: 'market-place', title: 'Marketplace', route: '/marketplace' },
-// 	{ key: 'our-team', title: 'Our Team', route: '/our-team' },
-// 	{ key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
-// ]
+const menus = [
+	{ key: 'home', title: 'Home', route: '/' },
+	{ key: 'trade', title: 'Trade', route: '/trade' },
+	{ key: 'market-place', title: 'Marketplace', route: '/marketplace' },
+	{ key: 'our-team', title: 'Our Team', route: '/our-team' },
+	{ key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
+]
 
 export interface HeaderMenuProps {
 	className?: string
 }
 
 const HeaderMenu: FC<HeaderMenuProps> = ({ ...props }) => {
-	// const router = useRouter()
-	// const activeFunction = useCallback(
-	// 	(compareRouter: string) => {
-	// 		return router.asPath === compareRouter
-	// 	},
-	// 	[router.asPath]
-	// )
+	const router = useRouter()
+	const activeFunction = useCallback(
+		(compareRouter: string) => {
+			return router.asPath === compareRouter
+		},
+		[router.asPath]
+	)
 
 	return (
 		<StyledHeaderMenu {...props} className={cn('menu', props?.className)}>
-			{/* {menus.map((menu) => (
+			{menus.map((menu) => (
 				<li
 					key={menu.key}
 					className={cn({ active: activeFunction(menu.route) })}>
@@ -116,7 +119,7 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ ...props }) => {
 						<a>{menu.title}</a>
 					</Link>
 				</li>
-			))} */}
+			))}
 		</StyledHeaderMenu>
 	)
 }
