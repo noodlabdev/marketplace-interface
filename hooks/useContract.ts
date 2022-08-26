@@ -1,16 +1,21 @@
 import { Contract } from '@ethersproject/contracts'
 import { Web3Provider } from '@ethersproject/providers'
+import ERC20ABI from 'abis/ERC20.json'
+import FactoryABI from 'abis/Factory.json'
+import PairABI from 'abis/Pair.json'
+import RouterABI from 'abis/Router.json'
+import { FACTORY_ADDRESS, ROUTER_ADDRESS } from 'constants/trade'
 
 import AuctionABI from '../abis/Auction.json'
-import FactoryABI from '../abis/Factory.json'
 import IERC721 from '../abis/IERC721.json'
 import MulticallABI from '../abis/Multicall2.json'
+import NFTFactoryABI from '../abis/NFTFactory.json'
 import {
-	FACTORY_ADDRESS,
 	MULTICALL_ADDRESS,
-	NFT_ADDRESS
+	NFT_ADDRESS,
+	FACTORY_ADDRESS as NFT_FACTORY_ADDRESS
 } from '../constants/networks'
-import { getContract } from '../utils'
+import { getContract, isAddress } from '../utils'
 
 export async function callContract(
 	contract: Contract,
@@ -45,8 +50,8 @@ export function getNFTContract(library: Web3Provider, account?: string) {
 	return getContract(NFT_ADDRESS, IERC721, library, account)
 }
 
-export function getFactoryContract(library: Web3Provider, account?: string) {
-	return getContract(FACTORY_ADDRESS, FactoryABI, library, account)
+export function getNFTFactoryContract(library: Web3Provider, account?: string) {
+	return getContract(NFT_FACTORY_ADDRESS, NFTFactoryABI, library, account)
 }
 
 export function getAuctionContract(
@@ -63,4 +68,30 @@ export function getFixedPriceContract(
 	account?: string
 ) {
 	return getContract(fixed, AuctionABI, library, account)
+}
+
+export function getERC20Contract(
+	token: string,
+	library: Web3Provider,
+	account?: string
+): Contract {
+	if (!isAddress(token)) throw Error('invalid token address')
+	return getContract(token, ERC20ABI, library, account)
+}
+
+export function getPairContract(
+	pair: string,
+	library: Web3Provider,
+	account?: string
+) {
+	if (!isAddress(pair)) throw Error('invalid pair address')
+	return getContract(pair, PairABI, library, account)
+}
+
+export function getFactoryContract(library: Web3Provider, account?: string) {
+	return getContract(FACTORY_ADDRESS, FactoryABI, library, account)
+}
+
+export function getRouterContract(library: Web3Provider, account?: string) {
+	return getContract(ROUTER_ADDRESS, RouterABI, library, account)
 }

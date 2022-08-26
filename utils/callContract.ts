@@ -8,8 +8,8 @@ import {
 	callContract,
 	callStaticContract,
 	getAuctionContract,
-	getFactoryContract,
-	getNFTContract
+	getNFTContract,
+	getNFTFactoryContract
 } from '../hooks/useContract'
 
 export const getOwnerDomains = async (
@@ -54,8 +54,8 @@ export const createFixedPrice = async (
 ) => {
 	const nftContract = getNFTContract(library, account)
 	await callContract(nftContract, NFT_METHODS.approve, [FACTORY_ADDRESS, nftId])
-	const factoryContract = getFactoryContract(library, account)
-	return callContract(factoryContract, 'createFixedPrice', [
+	const NFTFactory = getNFTFactoryContract(library, account)
+	return callContract(NFTFactory, 'createFixedPrice', [
 		nftId,
 		parseEther(price.toString())
 	])
@@ -71,8 +71,8 @@ export const createAuction = async (
 ) => {
 	const nftContract = getNFTContract(library, account)
 	await callContract(nftContract, NFT_METHODS.approve, [FACTORY_ADDRESS, nftId])
-	const factoryContract = getFactoryContract(library, account)
-	return callContract(factoryContract, 'createAuction', [
+	const NFTFactory = getNFTFactoryContract(library, account)
+	return callContract(NFTFactory, 'createAuction', [
 		nftId,
 		parseEther(startPrice),
 		parseEther(minBidIncrement),
