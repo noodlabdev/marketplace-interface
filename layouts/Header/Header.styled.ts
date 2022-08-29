@@ -45,6 +45,9 @@ export const StyledHeader = styled.header`
 		}
 		${StyledHeaderButtonContainer} {
 			.header--account {
+				@media screen and (max-width: 900px) {
+					display: none;
+				}
 			}
 		}
 		${StyledHeaderHamburger} {

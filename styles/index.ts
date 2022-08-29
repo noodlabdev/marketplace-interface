@@ -2,6 +2,8 @@ import styled, { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyled = createGlobalStyle`
 body {
+	width: 100vw;
+	overflow-x: hidden;
 	&.no--scroll {
 		overflow: hidden;
 	}
@@ -15,7 +17,7 @@ export const StyledLogo = styled.a`
 	height: 45px;
 	cursor: pointer;
 	&:hover {
-		color: #378471 !important;
+		color: #cb7fcc !important;
 	}
 	img {
 		width: 50px;
@@ -56,7 +58,6 @@ export const BgMatrix = styled.div<{ bgColor?: string }>`
 		left: 0;
 		width: 390px;
 		height: 350px;
-		background: left / cover no-repeat url('/images/bg-matrix-left.png');
 		content: '';
 	}
 	&:after {
@@ -66,7 +67,6 @@ export const BgMatrix = styled.div<{ bgColor?: string }>`
 		right: 0;
 		width: 390px;
 		height: 350px;
-		background: left / cover no-repeat url('/images/bg-matrix-right.png');
 		content: '';
 	}
 	@media screen and (max-width: 992px) {
@@ -173,7 +173,7 @@ export const cssBorderGradientHover = css`
 		bottom: 0;
 		left: 0;
 		opacity: 0;
-		background-image: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+		background-image: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 		border-radius: 15px;
 		content: '';
 		pointer-events: none;

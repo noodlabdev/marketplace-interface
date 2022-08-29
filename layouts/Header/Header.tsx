@@ -8,10 +8,12 @@ import { StyledLogo } from 'styles'
 import {
 	StyledHeader,
 	StyledHeaderButtonContainer,
+	StyledHeaderHamburger,
 	StyledHeaderMenuContainer,
 	StyledHeaderWrapper
 } from './Header.styled'
 import HeaderAccount from './HeaderAccount'
+import HeaderHamburger from './HeaderHamburger'
 import HeaderMenu from './HeaderMenu'
 import HeaderMobile from './HeaderMobile'
 
@@ -39,8 +41,8 @@ const Header: FC = () => {
 						<Link href="/" passHref>
 							<StyledLogo>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/logo.svg" alt="logo" />
-								<div>FLOKI MARKETPLACE</div>
+								<img src="/logo.png" alt="logo" />
+								<div>PinkPiggy</div>
 							</StyledLogo>
 						</Link>
 						<StyledHeaderMenuContainer>
@@ -48,12 +50,12 @@ const Header: FC = () => {
 						</StyledHeaderMenuContainer>
 						<StyledHeaderButtonContainer>
 							<HeaderAccount />
-							{/* <StyledHeaderHamburger>
+							<StyledHeaderHamburger>
 								<HeaderHamburger
 									isClose={openMobile}
 									onClick={() => setOpenMobile(!openMobile)}
 								/>
-							</StyledHeaderHamburger> */}
+							</StyledHeaderHamburger>
 						</StyledHeaderButtonContainer>
 					</StyledHeaderWrapper>
 				</Container>

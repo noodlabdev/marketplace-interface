@@ -44,7 +44,7 @@ const TabCustom = styled(Tabs)`
 		.MuiTabs-indicator {
 			z-index: -1;
 			height: 100%;
-			background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+			background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 			border-radius: ${({ theme }) => theme?.borderRadiusBase};
 		}
 	}

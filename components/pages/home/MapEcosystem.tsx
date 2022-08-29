@@ -42,11 +42,11 @@ const ImageContainer = styled.div`
 `
 
 const MapEcosystemContainer = styled(Section)`
-	background-image: url(/images/ecosystem-bg-top-left.svg),
-		url(/images/ecosystem-bg-bottom-right.svg);
-	background-position: top left, bottom right;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 25.9%, 25.9%;
+	// background-image: url(/images/ecosystem-bg-top-left.svg),
+	// 	url(/images/ecosystem-bg-bottom-right.svg);
+	// background-position: top left, bottom right;
+	// background-repeat: no-repeat, no-repeat;
+	// background-size: 25.9%, 25.9%;
 	.title {
 		margin-bottom: 16px;
 		text-align: center;
@@ -73,12 +73,12 @@ export const MapEcosystem: FC = () => {
 				<Grid container columns={12} justifyContent="center">
 					<Grid item xl={5} lg={6} md={8} sm={10} xs={12}>
 						<Title headingType="h2" size="md" className="title">
-							Huta Ecosystem
+							FEATURE OF PINK PIGGY
 						</Title>
-						<Description size="sm" className="description">
+						{/* <Description size="sm" className="description">
 							Huta ecosystem is custom-built to the needs of any individual,
 							private entity or government institution.
-						</Description>
+						</Description> */}
 					</Grid>
 				</Grid>
 				<Grid
@@ -95,13 +95,11 @@ export const MapEcosystem: FC = () => {
 					<Grid item lg={5} md={6} xs={12}>
 						<BoxBgGradient bgImage="linear-gradient(126.21deg, #1470D6 0%, #1F90CF 14.24%, #125DB0 49.56%, #1470D6 93.2%)">
 							<Title headingType="h3" size="xxs" className="boxTitle">
-								Huta DNS
+								PIG Swap
 							</Title>
 							<Description size="sm" className="boxDescription">
-								Huta DNS is blockchain-based, and the owner of a respective
-								domain &amp; Top-Level Domain has complete control of its usage,
-								even to the extent of provisioning new domain names via
-								subdomains.
+								Decentralized exchanges (AMM - DEX) where you can trade
+								conveniently
 							</Description>
 							<Button variant="contained" className="boxButton">
 								Learn More
@@ -109,14 +107,11 @@ export const MapEcosystem: FC = () => {
 						</BoxBgGradient>
 						<BoxBgGradient bgImage="linear-gradient(126.21deg, #CF1FBD 0%, #D430EF 14.24%, #A30E93 49.56%, #CF1FBD 93.2%)">
 							<Title headingType="h3" size="xxs" className="boxTitle">
-								Huta Browser &amp; Browser Extension
+								PIG DAO
 							</Title>
 							<Description size="sm" className="boxDescription">
-								The Huta Browser &amp; Extension will enable users to access
-								blockchain-based DNS technologies. Users have to install the
-								Huta browser or browser extension to their existing browser to
-								access decentralized domains and TLDs and existing traditional
-								centralized domains and TLDs.
+								You and us will be the ones to decide the development route of
+								the project by Vote DAO
 							</Description>
 							<Button variant="contained" className="boxButton">
 								Learn More
@@ -124,12 +119,36 @@ export const MapEcosystem: FC = () => {
 						</BoxBgGradient>
 						<BoxBgGradient bgImage="linear-gradient(126.21deg, #6A35EE 0%, #9930EF 14.24%, #5737EE 49.56%, #795CEB 93.2%)">
 							<Title headingType="h3" size="xxs" className="boxTitle">
-								Huta Token
+								STAKING
 							</Title>
 							<Description size="sm" className="boxDescription">
-								The Huta token is a crypto token being released initially on the
-								Binance Smart Chain. 2.1 Million EXIP tokens will be minted and
-								used to buy, sell, and auction domains &amp; Top-Level Domains,
+								Up to 1254% APR
+							</Description>
+							<Button variant="contained" className="boxButton">
+								Learn More
+							</Button>
+						</BoxBgGradient>
+
+						<BoxBgGradient bgImage="linear-gradient(126.21deg, #1470D6 0%, #1F90CF 14.24%, #125DB0 49.56%, #1470D6 93.2%)">
+							<Title headingType="h3" size="xxs" className="boxTitle">
+								IRO
+							</Title>
+							<Description size="sm" className="boxDescription">
+								Initial reference Offering: New incubator for projects on BNB
+								Chain and more chain in future
+							</Description>
+							<Button variant="contained" className="boxButton">
+								Learn More
+							</Button>
+						</BoxBgGradient>
+
+						<BoxBgGradient bgImage="linear-gradient(126.21deg, #CF1FBD 0%, #D430EF 14.24%, #A30E93 49.56%, #CF1FBD 93.2%)">
+							<Title headingType="h3" size="xxs" className="boxTitle">
+								NFT MARKETPLACE
+							</Title>
+							<Description size="sm" className="boxDescription">
+								100% of NFTs will be Free for initial investors. Owning the NFT
+								gives you the right to vote in our autonomous economy
 							</Description>
 							<Button variant="contained" className="boxButton">
 								Learn More

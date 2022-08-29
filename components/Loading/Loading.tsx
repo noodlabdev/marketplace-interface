@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router'
 
+import { CircularProgress } from '@mui/material'
 import styled from 'styled-components'
 
 const LoadingBackdrop = styled.div`
@@ -68,7 +69,7 @@ const Loading: FC<LoadingProps> = ({ loading: loadingProps, children }) => {
 		<LoadingContainer className={loading ? 'loading' : ''}>
 			<LoadingWrapper>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
-				<img src="/icons/LoadingGradient.svg" alt="" />
+				<CircularProgress />
 				<LoadingBackdrop />
 			</LoadingWrapper>
 			<LoadingContent>{children}</LoadingContent>

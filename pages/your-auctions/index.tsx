@@ -140,8 +140,8 @@ const YourDomain: NextPage = () => {
 export async function getStaticProps() {
 	return {
 		props: {
-			title: 'Your Domain',
-			description: 'This is a description for Your Domain page'
+			title: 'Your Auctions',
+			description: 'This is a description for Your Auctions page'
 		}
 	}
 }

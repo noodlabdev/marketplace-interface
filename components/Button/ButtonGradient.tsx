@@ -23,7 +23,7 @@ const styleButtonGradient = css`
 		left: 50%;
 		width: 200%;
 		height: 200%;
-		background-image: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+		background-image: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 		content: '';
 		transform: translate(-50%, -50%);
 		transition: 0.25s all linear;

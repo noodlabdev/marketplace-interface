@@ -1,20 +1,23 @@
 import { useEffect, useRef } from 'react'
 
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import { Container, Grid, IconButton, SvgIcon } from '@mui/material'
-import { Description, Title, TopPage } from 'components'
-import { DomainCardProps } from 'components/Card/DomainCard'
-import { DomainCarousel } from 'components/pages/home/DomainCarousel'
-import { InfoNumber } from 'components/pages/home/InfoNumber'
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+// import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+// import { Container, Grid, IconButton, SvgIcon } from '@mui/material'
+import { Description, TopPage } from 'components'
+// import { DomainCardProps } from 'components/Card/DomainCard'
+// import { DomainCarousel } from 'components/pages/home/DomainCarousel'
+// import { InfoNumber } from 'components/pages/home/InfoNumber'
 import { MapEcosystem } from 'components/pages/home/MapEcosystem'
+import PartnerBacker from 'components/pages/home/PartnerBacker'
 import { RoadMap } from 'components/pages/home/RoadMap'
-import DomainSvg from 'public/images/noun-domain.svg'
-import InternetSvg from 'public/images/noun-internet.svg'
+import Tokenomics from 'components/pages/home/Tokenomics'
+// import DomainSvg from 'public/images/noun-domain.svg'
+// import InternetSvg from 'public/images/noun-internet.svg'
 import styled from 'styled-components'
-import { BgGradient, Section } from 'styles'
+// import { BgGradient, Section } from 'styles'
 import 'swiper/css'
 
 const TopPageVideo = styled.video`
@@ -39,6 +42,9 @@ const TypePageCustom = styled(TopPage)`
 			font-weight: 600;
 			line-height: 1.1;
 		}
+	}
+	a {
+		color: white;
 	}
 	@media screen and (max-width: 1699px) {
 		.topPage--inner {
@@ -68,100 +74,82 @@ const TypePageCustom = styled(TopPage)`
 	}
 `
 
-const BoxInfoContainer = styled(BgGradient)`
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	justify-content: flex-start;
-	padding: 40px 30px 40px 40px;
-	border-radius: 20px;
-	box-shadow: 0px 20px 54px 0px #857ab44d;
-	.boxInfo-icon {
-		width: 48px;
-		height: 48px;
-		margin-bottom: 24px;
-	}
-	.boxInfo-title {
-		margin-bottom: 24px;
-	}
-	.boxInfo-description {
-		flex: 1;
-		margin-bottom: 20px;
-	}
-	.boxInfo-btn {
-		padding: 10px;
-		background-color: ${({ theme }) => theme?.colors?.white};
-	}
-	@media screen and (max-width: 1700px) {
-		padding: 32px 25px 32px 32px;
-		border-radius: 16px;
-		.boxInfo-icon {
-			width: 48px;
-			height: 48px;
-			margin-bottom: 24px;
-		}
-		.boxInfo-title {
-			margin-bottom: 16px;
-			font-size: 24px;
-		}
-		.boxInfo-description {
-			margin-bottom: 20px;
-			font-size: 16px;
-		}
-		.boxInfo-btn {
-			padding: 8px;
-		}
-	}
-	@media screen and (max-width: 768px) {
-		padding: 30px 15px;
-	}
-`
+// const BoxInfoContainer = styled(BgGradient)`
+// 	display: flex;
+// 	height: 100%;
+// 	flex-direction: column;
+// 	justify-content: flex-start;
+// 	padding: 40px 30px 40px 40px;
+// 	border-radius: 20px;
+// 	box-shadow: 0px 20px 54px 0px #857ab44d;
+// 	.boxInfo-icon {
+// 		width: 48px;
+// 		height: 48px;
+// 		margin-bottom: 24px;
+// 	}
+// 	.boxInfo-title {
+// 		margin-bottom: 24px;
+// 	}
+// 	.boxInfo-description {
+// 		flex: 1;
+// 		margin-bottom: 20px;
+// 	}
+// 	.boxInfo-btn {
+// 		padding: 10px;
+// 		background-color: ${({ theme }) => theme?.colors?.white};
+// 	}
+// 	@media screen and (max-width: 1700px) {
+// 		padding: 32px 25px 32px 32px;
+// 		border-radius: 16px;
+// 		.boxInfo-icon {
+// 			width: 48px;
+// 			height: 48px;
+// 			margin-bottom: 24px;
+// 		}
+// 		.boxInfo-title {
+// 			margin-bottom: 16px;
+// 			font-size: 24px;
+// 		}
+// 		.boxInfo-description {
+// 			margin-bottom: 20px;
+// 			font-size: 16px;
+// 		}
+// 		.boxInfo-btn {
+// 			padding: 8px;
+// 		}
+// 	}
+// 	@media screen and (max-width: 768px) {
+// 		padding: 30px 15px;
+// 	}
+// `
 
-const NiceBackground = styled.div`
-	position: relative;
-	background-color: ${({ theme }) => theme?.colors?.darkPurple4};
-	&:before {
-		position: absolute;
-		right: 0;
-		bottom: -10%;
-		width: 46%;
-		height: 94%;
-		background-image: url('/images/bg-home-info.png');
-		background-position: right bottom;
-		background-repeat: no-repeat;
-		background-size: contain;
-		content: '';
-		pointer-events: none;
-	}
-	${Section} {
-		position: relative;
-		z-index: 1;
-		background-color: transparent;
-	}
-	@media screen and (max-width: 768px) {
-		&:before {
-			bottom: 0;
-		}
-	}
-`
-
-const SectionGray = styled(Section)`
-	background-color: ${({ theme }) => theme?.colors?.darkBlue4};
-`
-
-const domains: Array<DomainCardProps> = [
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } },
-	// { domain: 'google.com', buttonProps: { children: 'Click 5 BNB' } }
-]
+// const NiceBackground = styled.div`
+// 	position: relative;
+// 	background-color: ${({ theme }) => theme?.colors?.darkPurple4};
+// 	&:before {
+// 		position: absolute;
+// 		right: 0;
+// 		bottom: -10%;
+// 		width: 46%;
+// 		height: 94%;
+// 		background-image: url('/images/bg-home-info.png');
+// 		background-position: right bottom;
+// 		background-repeat: no-repeat;
+// 		background-size: contain;
+// 		content: '';
+// 		pointer-events: none;
+// 	}
+// 	${Section} {
+// 		position: relative;
+// 		z-index: 1;
+// 		background-color: transparent;
+// 	}
+// 	@media screen and (max-width: 768px) {
+// 		&:before {
+// 			bottom: 0;
+// 		}
+// 	}
+// `
 
 const Home: NextPage = () => {
 	const videoRef = useRef<HTMLVideoElement>(null)
@@ -175,7 +163,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<TypePageCustom
-				title="Be in new world of the internet"
+				title="Decentralized DEFI, the power of technology and new ideas"
 				size="lg"
 				containerProps={{
 					justifyContent: 'flex-start'
@@ -195,13 +183,19 @@ const Home: NextPage = () => {
 					/>
 				}>
 				<Description>
-					Huta is decentralised domain name system which governed by community
+					Changing the way of looking at Defi 2.0 with a diverse economy like
+					AMM, Pig DAO, Staking, Pig IRO, NFT Marketplace and more…
 				</Description>
+				<Link href="https://google.com">
+					<a target="_blank" rel="noopener noreferrer">
+						Whitepaper
+					</a>
+				</Link>
 			</TypePageCustom>
 
-			<InfoNumber />
+			{/* <InfoNumber /> */}
 
-			<NiceBackground>
+			{/* <NiceBackground>
 				<Section className="homepage-infomation" paddingVertical={0}>
 					<Container>
 						<Grid container columns={12} spacing={{ lg: 10, md: 3, xs: 4 }}>
@@ -285,11 +279,15 @@ const Home: NextPage = () => {
 						endIcon: <ArrowForwardIcon />
 					}}
 				/>
-			</SectionGray>
+			</SectionGray> */}
 
 			<MapEcosystem />
 
 			<RoadMap />
+
+			<Tokenomics />
+
+			<PartnerBacker />
 		</>
 	)
 }

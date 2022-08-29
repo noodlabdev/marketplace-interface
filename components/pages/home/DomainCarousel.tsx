@@ -12,7 +12,7 @@ const ButtonMore = styled(Button)`
 	line-height: 1.4;
 	padding: 13px 24px;
 	&:hover {
-		background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+		background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 	}
 	&.MuiButton-endIcon {
 		> *:nth-of-type(1) {

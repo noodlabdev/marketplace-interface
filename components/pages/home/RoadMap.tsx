@@ -20,7 +20,7 @@ const RoadMapTooltipWrapper = styled.div`
 		bottom: 1px;
 		left: 1px;
 		border-radius: 7px;
-		background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+		background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 	}
 	&:after {
 		content: '';
@@ -295,11 +295,11 @@ const RoadMapWrapper = styled.div`
 const RoadMapContainer = styled.div`
 	padding-top: 80px;
 	padding-bottom: 80px;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-image: url('/images/roadmap-bg.png');
-	background-color: ${({ theme }) => theme?.colors?.darkPurple4};
+	// background-size: cover;
+	// background-position: center;
+	// background-repeat: no-repeat;
+	// background-image: url('/images/roadmap-bg.png');
+	// background-color: ${({ theme }) => theme?.colors?.darkPurple4};
 	.title {
 		color: ${({ theme }) => theme?.colors?.white};
 		text-align: center;
@@ -315,66 +315,72 @@ const RoadMapContainer = styled.div`
 const roadMaps = [
 	{
 		title: 'May 2021 - Phase 01',
-		list: ['Hero NFT Sale (BEP-721)', 'Hero Marketplace'],
+		list: ['Idea', 'Assemble the team', 'Product development'],
 		top: -1.4,
 		left: 19.8,
-		placement: 'top'
-	},
-	{
-		title: 'Jun 2021 - Phase 02',
-		list: ['Introduce FARA token & IDO', 'Stake FARA to increase hero’s level'],
-		top: 15.5,
-		left: 29.5,
 		placement: 'right'
 	},
 	{
-		title: 'Jul 2021 - Phase 03',
-		list: ['Hero Equipment (BEP-1155)', 'Gacha Equipment Vendor'],
+		title: 'Jun 2021 - Phase 02',
+		list: [
+			'Landing Page',
+			'Social Creation and marketing',
+			'Pinksale Fairlaunch',
+			'Pancake listing',
+			'Pigswap',
+			'NFT PIG'
+		],
 		top: 42.5,
 		left: 26,
-		placement: 'left'
+		placement: 'bottom'
+	},
+	{
+		title: 'Jul 2021 - Phase 03',
+		list: ['CMC, CGC listing', 'Pig Dao', 'Staking'],
+
+		top: 54,
+		left: 65,
+		placement: 'top'
 	},
 	{
 		title: 'Aug - Nov 2021 - Phase 04',
 		list: [
-			'Equipment Enhancement',
-			'Equipment Marketplace',
-			'DAO Governance',
-			'Earn resources by deploying Hero to Expedition'
+			'CEX listing',
+			'Pig IRO launchpad',
+			'Big marketing',
+			'And more product (Predict, Lottely)…'
 		],
-		top: 54,
-		left: 37.76,
-		placement: 'bottom'
-	},
-	{
-		title: 'Dec 2021 - Phase 05',
-		list: [
-			'Learn Skill Books',
-			'Android & IOS version',
-			'Hero Aren (Turn-based Strategy Combat)'
-		],
-		top: 42.5,
-		left: 63,
-		placement: 'top'
-	},
-	{
-		title: 'Q1 2022 - Phase 06',
-		list: [
-			'World Map Release',
-			'Land Customization & Camping System',
-			'Introduce Monsters'
-		],
-		top: 54,
-		left: 65,
-		placement: 'right'
-	},
-	{
-		title: 'Q2 2022 -  Phase 07',
-		list: ['Guild Battle'],
 		top: 77,
 		left: 60.5,
 		placement: 'right'
 	}
+	// {
+	// 	title: 'Dec 2021 - Phase 05',
+	// 	list: [
+	// 		'Learn Skill Books',
+	// 		'Android & IOS version',
+	// 		'Hero Aren (Turn-based Strategy Combat)'
+	// 	],
+
+	// 	placement: 'top'
+	// },
+	// {
+	// 	title: 'Q1 2022 - Phase 06',
+	// 	list: [
+	// 		'World Map Release',
+	// 		'Land Customization & Camping System',
+	// 		'Introduce Monsters'
+	// 	],
+	// 	top: 54,
+	// 	left: 65,
+	// 	placement: 'right'
+	// },
+	// {
+	// 	title: 'Q2 2022 -  Phase 07',
+	// 	list: ['Guild Battle'],
+
+	// 	placement: 'right'
+	// }
 ]
 
 export const RoadMap: FC = () => {

@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { CircularProgress } from '@mui/material'
 import styled from 'styled-components'
 
 const LoadingBackdrop = styled.div`
@@ -59,7 +60,7 @@ const TransactionLoading: FC<LoadingProps> = ({ loading }) => {
 		<LoadingContainer className={loading ? 'loading' : ''}>
 			<LoadingWrapper>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
-				<img src="/icons/LoadingGradient.svg" alt="" />
+				<CircularProgress />
 				<LoadingBackdrop />
 			</LoadingWrapper>
 			{/* <LoadingContent>{children}</LoadingContent> */}

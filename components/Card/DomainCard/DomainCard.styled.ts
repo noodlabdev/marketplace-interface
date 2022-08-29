@@ -16,7 +16,7 @@ export const DomainCardButton = styled(Button)`
 	margin-top: 20px;
 	border-radius: ${({ theme }) => theme?.borderRadiusBase};
 	box-shadow: 0px 15px 30px 0px #0c04144d;
-	background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+	background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 	font-weight: 500;
 	text-transform: inherit;
 	media screen and (max-width: 1700px) {

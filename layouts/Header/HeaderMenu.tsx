@@ -34,7 +34,7 @@ export const StyledHeaderMenu = styled.ul`
 					bottom: 0;
 					width: 0;
 					height: 2px;
-					background: linear-gradient(310deg, #268d94 25%, #417b52 100%);
+					background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 					transform: translateX(-50%);
 					transition: 0.2s linear all;
 				}
@@ -89,11 +89,13 @@ export const StyledHeaderMenu = styled.ul`
 `
 
 const menus = [
-	{ key: 'home', title: 'Home', route: '/' },
-	{ key: 'trade', title: 'Trade', route: '/trade' },
-	{ key: 'market-place', title: 'Marketplace', route: '/marketplace' },
-	{ key: 'our-team', title: 'Our Team', route: '/our-team' },
-	{ key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
+	{ key: 'home', title: 'HOME', route: '/' },
+	{ key: 'trade', title: 'PIG SWAP', route: '/trade' },
+	{ key: 'dao', title: 'PIG DAO', route: '/dao' },
+	{ key: 'iro', title: 'PIG IRO', route: '/iro' },
+	{ key: 'market-place', title: 'NFT MARKETPLACE', route: '/marketplace' }
+	// { key: 'our-team', title: 'Our Team', route: '/our-team' },
+	// { key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
 ]
 
 export interface HeaderMenuProps {

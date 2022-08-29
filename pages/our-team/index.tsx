@@ -120,7 +120,10 @@ const DescriptionCustom = styled(Description)`
 const ButtonMore = styled(Button)`
 	padding: 14px 24px;
 	border: 1px solid ${({ theme }) => theme?.colors?.white};
-	background-color: ${({ theme }) => theme?.colors?.darkPurple4};
+	background: transparent;
+	&:hover {
+		background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
+	}
 	line-height: 1.4;
 	text-transform: capitalize;
 	@media screen and (max-width: 1700px) {
