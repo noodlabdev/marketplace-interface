@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"export": "next build && next export -o _static",
 		"start": "next start",
 		"lint": "eslint \"*/**/*.{ts,tsx}\"",
 		"lint:fix": "eslint --fix '*/**/*.{ts,tsx}'",

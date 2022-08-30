@@ -5,7 +5,7 @@ import type { NextPage } from 'next'
 import { useQuery } from '@apollo/client'
 import { formatEther } from '@ethersproject/units'
 import { Container, Grid, Tab, Tabs } from '@mui/material'
-import { Description, TabPanel, TopPage } from 'components'
+import { TabPanel } from 'components'
 import { DomainCard } from 'components/Card/DomainCard'
 import TransactionLoading from 'components/TransactionLoading'
 import { NFT_BID_TYPE } from 'constants/constants'
@@ -15,18 +15,18 @@ import { GET_NFT_ON_SALE } from 'services/apollo/queries'
 import styled from 'styled-components'
 import { Section } from 'styles'
 
-const TopPageCustom = styled(TopPage)`
-	.description {
-		max-width: 90%;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	@media screen and (max-width: 768px) {
-		.description {
-			max-width: 100%;
-		}
-	}
-`
+// const TopPageCustom = styled(TopPage)`
+// 	.description {
+// 		max-width: 90%;
+// 		margin-right: auto;
+// 		margin-left: auto;
+// 	}
+// 	@media screen and (max-width: 768px) {
+// 		.description {
+// 			max-width: 100%;
+// 		}
+// 	}
+// `
 
 const TabCustom = styled(Tabs)`
 	position: relative;
@@ -125,12 +125,12 @@ const Home: NextPage = () => {
 
 	return (
 		<>
-			<TopPageCustom title="Our Market Place" size="md">
+			{/* <TopPageCustom title="Our Market Place" size="md">
 				<Description className="description">
 					It is a long established fact that a reader will be distracted by the
 					readable content of a page when looking at its layout.
 				</Description>
-			</TopPageCustom>
+			</TopPageCustom> */}
 			<Section>
 				<Container>
 					<TabHead>

@@ -30,7 +30,6 @@ const TopPageVideo = styled.video`
 		left: 80%;
 		min-width: auto;
 		height: 100%;
-		transform: translateX(-80%);
 	}
 `
 
@@ -175,6 +174,8 @@ const Home: NextPage = () => {
 				}}
 				bgGradient={
 					<TopPageVideo
+						// src="/images/bg.jpeg"
+						// alt="bg"
 						ref={videoRef}
 						src="/video/banner.mp4"
 						autoPlay
@@ -186,7 +187,7 @@ const Home: NextPage = () => {
 					Changing the way of looking at Defi 2.0 with a diverse economy like
 					AMM, Pig DAO, Staking, Pig IRO, NFT Marketplace and more…
 				</Description>
-				<Link href="https://google.com">
+				<Link href="/whitepaper.pdf">
 					<a target="_blank" rel="noopener noreferrer">
 						Whitepaper
 					</a>
