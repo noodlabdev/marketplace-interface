@@ -39,12 +39,39 @@ const TypePageCustom = styled(TopPage)`
 		.topPage--title {
 			font-size: 88px;
 			font-weight: 600;
-			line-height: 1.1;
+			line-height: 1;
+			text-align: center;
+			&.sub {
+				color: #cb7fcc !important;
+			}
 		}
 	}
 	a {
 		color: white;
 	}
+	.desc {
+		text-align: center;
+	}
+	.wpp-wrapper {
+		display: flex;
+		justify-content: center;
+		.wpp {
+			margin: 22px 0;
+			background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
+			padding: 14px;
+			cursor: pointer;
+			border-radius: 15px;
+			text-align: center;
+			border: none;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 600;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
 	@media screen and (max-width: 1699px) {
 		.topPage--inner {
 			.topPage--title {
@@ -162,7 +189,9 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<TypePageCustom
-				title="Decentralized DEFI, the power of technology and new ideas"
+				title="Decentralized DEFI"
+				subTile="The Power"
+				endTitle="Of Technology And New Ideas"
 				size="lg"
 				containerProps={{
 					justifyContent: 'flex-start'
@@ -183,15 +212,17 @@ const Home: NextPage = () => {
 						muted
 					/>
 				}>
-				<Description>
+				<Description className="desc">
 					Changing the way of looking at Defi 2.0 with a diverse economy like
 					AMM, Pig DAO, Staking, Pig IRO, NFT Marketplace and more…
 				</Description>
-				<Link href="/whitepaper.pdf">
-					<a target="_blank" rel="noopener noreferrer">
-						Whitepaper
-					</a>
-				</Link>
+				<div className="wpp-wrapper">
+					<Link href="/whitepaper.pdf">
+						<a className="wpp" target="_blank" rel="noopener noreferrer">
+							WHITEPAPER
+						</a>
+					</Link>
+				</div>
 			</TypePageCustom>
 
 			{/* <InfoNumber /> */}

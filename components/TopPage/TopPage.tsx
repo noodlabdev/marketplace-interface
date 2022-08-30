@@ -19,6 +19,8 @@ const TopPage: FC<TopPageProps> = ({
 	size,
 	className,
 	title,
+	subTile,
+	endTitle,
 	titleProps,
 	bgSrc,
 	bgGradient,
@@ -135,6 +137,16 @@ const TopPage: FC<TopPageProps> = ({
 										{title}
 									</TopPageTitle>
 								)}
+								{subTile && (
+									<TopPageTitle className="sub topPage--title">
+										{subTile}
+									</TopPageTitle>
+								)}
+								{endTitle && (
+									<TopPageTitle className="end topPage--title">
+										{endTitle}
+									</TopPageTitle>
+								)}
 								<TopPageContent>{children}</TopPageContent>
 							</TopPageInner>
 						</Grid>
@@ -154,6 +166,8 @@ export interface TopPageProps {
 	size?: 'lg' | 'md' | 'sm'
 	className?: string
 	title?: string
+	subTile?: string
+	endTitle?: string
 	titleProps?: TitleProps
 	bgSrc?: string | TopPageBGSrcProps
 	bgGradient?: React.ReactNode | JSX.Element

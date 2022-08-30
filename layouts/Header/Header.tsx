@@ -42,7 +42,7 @@ const Header: FC = () => {
 							<StyledLogo>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/logo.png" alt="logo" />
-								<div>PinkPiggy</div>
+								<div>PINKPIGGY</div>
 							</StyledLogo>
 						</Link>
 						<StyledHeaderMenuContainer>

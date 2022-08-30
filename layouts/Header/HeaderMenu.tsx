@@ -26,6 +26,7 @@ export const StyledHeaderMenu = styled.ul`
 				position: relative;
 				padding-top: 10px;
 				padding-bottom: 10px;
+				font-weight: 700;
 				color: ${({ theme }) => theme?.colors?.gray4 || ''};
 				&:before {
 					content: '';
@@ -90,9 +91,9 @@ export const StyledHeaderMenu = styled.ul`
 
 const menus = [
 	{ key: 'home', title: 'HOME', route: '/' },
-	{ key: 'trade', title: 'PIG SWAP', route: '/trade' },
-	{ key: 'dao', title: 'PIG DAO', route: '/dao' },
-	{ key: 'iro', title: 'PIG IRO', route: '/iro' },
+	{ key: 'trade', title: 'PIGSWAP', route: '/trade' },
+	{ key: 'dao', title: 'PIGDAO', route: '/dao' },
+	{ key: 'iro', title: 'PIGIRO', route: '/iro' },
 	{ key: 'market-place', title: 'NFT MARKETPLACE', route: '/marketplace' }
 	// { key: 'our-team', title: 'Our Team', route: '/our-team' },
 	// { key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }

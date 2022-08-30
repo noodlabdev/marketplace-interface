@@ -16,9 +16,7 @@ export const StyledLogo = styled.a`
 	align-items: center;
 	height: 45px;
 	cursor: pointer;
-	&:hover {
-		color: #cb7fcc !important;
-	}
+	color: #cb7fcc !important;
 	img {
 		width: 50px;
 		aspect-ratio: auto 50 / 50;
@@ -27,6 +25,7 @@ export const StyledLogo = styled.a`
 	div {
 		margin-left: 12px;
 		font-size: 24px;
+		font-weight: 600;
 	}
 	@media screen and (max-width: 500px) {
 		div {
