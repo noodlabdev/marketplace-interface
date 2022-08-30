@@ -131,7 +131,12 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 			<TransactionLoading loading={submitting} />
 			<YourDomainCardWrap>
 				<div className="yd-card-left">
-					<Image src={nft.nftURI} alt="nft" height={400} width={400} />
+					<Image
+						src={`/nfts/${nft.nftURI}`}
+						alt="nft"
+						height={400}
+						width={400}
+					/>
 					<YourDomainCardName>ID: {nft.id}</YourDomainCardName>
 					<OnSaleWrap>
 						<DomainCardButton

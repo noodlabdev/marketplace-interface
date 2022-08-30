@@ -7,17 +7,21 @@ export interface Network {
 }
 
 export const NETWORKS_SUPPORTED: Network = {
-	name: 'Rinkeby Testnet',
-	chainId: 4,
-	rpc: ['https://rinkeby.infura.io/v3/d5a3ddc7c4b24c3a9966616bdf77945e']
+	name: 'Binance Smart Chain',
+	chainId: 56,
+	rpc: [
+		'https://bsc-dataseed1.binance.org/',
+		'https://bsc-dataseed1.defibit.io/',
+		'https://bsc-dataseed1.ninicoin.io/'
+	]
 }
 
 export const WETH: Token = new Token(
 	NETWORKS_SUPPORTED.chainId,
-	'0xc778417E063141139Fce010982780140Aa0cD5Ab',
+	'0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
 	18,
-	'WETH',
-	'WETH'
+	'WBNB',
+	'WBNB'
 )
 
 // used to construct intermediary pairs for trading
@@ -29,35 +33,42 @@ export const TOKEN_LIST: Token[] = [
 	WETH,
 	new Token(
 		NETWORKS_SUPPORTED.chainId,
-		'0xC6EC509B91d80A6dD58aC23Df2eAB83fC6585d42',
+		'0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+		18,
+		'BUSD',
+		'Binance USD'
+	),
+	new Token(
+		NETWORKS_SUPPORTED.chainId,
+		'0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
 		18,
 		'USDC',
-		'USDC'
+		'USD Coin'
 	),
 	new Token(
 		NETWORKS_SUPPORTED.chainId,
-		'0x1305b5BbD5A18456FF0Bf32Ce50f1B40987da6eB',
+		'0x3f1f7a4D8F17294eE1910b526296Cdf5c9bFCc7C',
 		18,
-		'DAI',
-		'DAI'
-	),
-	new Token(
-		NETWORKS_SUPPORTED.chainId,
-		'0xa9b379E408413dbb8805aeEb7250173df74b955e',
-		18,
-		'USDT',
-		'USDT'
+		'PIP',
+		'PinkPiggy'
 	)
 ]
 
-export const MULTICALL_ADDRESS = '0x5ba1e12693dc8f9c48aad8770482f4739beed696'
+export const TOKEN_ICON_LIST = {
+	[WETH.address]: '/tokens/wbnb.png',
+	'0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56': '/tokens/busd.png',
+	'0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d': '/tokens/usdc.png',
+	'0x3f1f7a4D8F17294eE1910b526296Cdf5c9bFCc7C': '/logo.png'
+}
 
-export const FACTORY_ADDRESS = '0x216d68BE9A68c18984Bf79192a817569E24Ef50f'
+export const MULTICALL_ADDRESS = '0x41263cba59eb80dc200f3e2544eda4ed6a90e76c'
 
-export const ROUTER_ADDRESS = '0xB06674180C3342fF55b4732aBc2F1D2c29cF95A0'
+export const FACTORY_ADDRESS = '0x2f2EcA3Fd397c79a5d30eD139D9Bd833Bcab67F0'
+
+export const ROUTER_ADDRESS = '0xfe4522163CAEE375cE631f6FE3f145811c0A6079'
 
 export const INIT_CODE_HASH =
-	'0x83848be097e476754448147144a11610b2ab21ce3ff956deb1b81478a9ed9cea'
+	'0x8cfcb207fee55354863fcdc57e6a5ba950d2a62df93278966bcdc5775e9d2cb4'
 
 export const MASTER_CHIEF_ADDRESS = '0x18c0f49EbB3b035758bcc93f21023310B5f622f5'
 
