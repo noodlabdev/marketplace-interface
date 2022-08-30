@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
 	color: #fff;
 	h1 {
+		margin: 60px 0 40px;
 		text-align: center;
 	}
 	img {
@@ -65,6 +66,7 @@ const PartnerBacker = () => {
 					))}
 				</Grid>
 
+				<hr />
 				<Title>STRATEGIC PARTNERS</Title>
 				<Grid alignItems="center" justifyContent="center" container spacing={4}>
 					{strategics.map((e, i) => (
@@ -76,8 +78,13 @@ const PartnerBacker = () => {
 					))}
 				</Grid>
 
+				<hr />
 				<Title>AS SEEN IN</Title>
-				<Grid alignItems="center" justifyContent="center" container spacing={4}>
+				<Grid
+					alignItems="center"
+					justifyContent="center"
+					container
+					spacing={[1, 6]}>
 					{asSeens.map((e, i) => (
 						<Grid key={i} item xs={4} md={4} lg={3} xl={2}>
 							<div>
