@@ -1,13 +1,12 @@
 import { Grid } from '@mui/material'
 import { Container } from '@mui/system'
+import Title from 'components/Title'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
 	color: #fff;
-	h3 {
-		font-size: 24px;
+	h1 {
 		text-align: center;
-		padding: 16px 0;
 	}
 	img {
 		width: 100%;
@@ -55,7 +54,7 @@ const PartnerBacker = () => {
 	return (
 		<Wrapper>
 			<Container>
-				<h3>PIGPINK WILL BE ON</h3>
+				<Title>PINKPIGGY WILL BE ON</Title>
 				<Grid alignItems="center" justifyContent="center" container spacing={4}>
 					{asWillComes.map((e, i) => (
 						<Grid key={i} item xs={4} md={4} lg={3} xl={2}>
@@ -66,7 +65,7 @@ const PartnerBacker = () => {
 					))}
 				</Grid>
 
-				<h3>STRATEGIC PARTNERS</h3>
+				<Title>STRATEGIC PARTNERS</Title>
 				<Grid alignItems="center" justifyContent="center" container spacing={4}>
 					{strategics.map((e, i) => (
 						<Grid key={i} item xs={4} md={4} lg={3} xl={2}>
@@ -77,7 +76,7 @@ const PartnerBacker = () => {
 					))}
 				</Grid>
 
-				<h3>AS SEEN IN</h3>
+				<Title>AS SEEN IN</Title>
 				<Grid alignItems="center" justifyContent="center" container spacing={4}>
 					{asSeens.map((e, i) => (
 						<Grid key={i} item xs={4} md={4} lg={3} xl={2}>
