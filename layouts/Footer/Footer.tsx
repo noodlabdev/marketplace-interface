@@ -6,7 +6,7 @@ import TelegramIcon from '@mui/icons-material/Telegram'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import { Container, Divider, Tooltip } from '@mui/material'
-import DiscordIcon from 'public/images/Discord.svg'
+import DiscordIcon from 'public/images/discord.svg'
 import styled from 'styled-components'
 import { StyledLogo, TermContainer } from 'styles'
 
