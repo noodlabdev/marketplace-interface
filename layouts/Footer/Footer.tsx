@@ -4,7 +4,9 @@ import Link from 'next/link'
 
 import TelegramIcon from '@mui/icons-material/Telegram'
 import TwitterIcon from '@mui/icons-material/Twitter'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 import { Container, Divider, Tooltip } from '@mui/material'
+import DiscordIcon from 'public/images/Discord.svg'
 import styled from 'styled-components'
 import { StyledLogo, TermContainer } from 'styles'
 
@@ -25,6 +27,8 @@ const SocialIcons = styled.div`
 		margin: 8px 0;
 		cursor: pointer;
 		border-radius: 50%;
+		max-width: 20px;
+		height: auto;
 		&:hover {
 			opacity: 0.8;
 		}
@@ -67,13 +71,32 @@ const Footer: FC = () => {
 				</div>
 			</Container>
 			<SocialIcons>
+				<a href="https://discord.gg/rGXYeVQVkD" target={'_blank'}>
+					<Tooltip title="Discord">
+						<div>
+							<DiscordIcon />
+						</div>
+					</Tooltip>
+				</a>
+				<a
+					href="https://www.youtube.com/channel/UCnl5C9wqRAQxAfc4F-e25Mw"
+					target={'_blank'}>
+					<Tooltip title="Youtube">
+						<YouTubeIcon sx={{ color: 'white' }} />
+					</Tooltip>
+				</a>
+				<a href="https://twitter.com/ppiggyfinance" target={'_blank'}>
+					<Tooltip title="Twitter">
+						<TwitterIcon sx={{ color: 'white' }} />
+					</Tooltip>
+				</a>
 				<a href="https://t.me/pinkpigyfinace" target={'_blank'}>
-					<Tooltip title="PinkPigyFinace">
+					<Tooltip title="Telegram">
 						<TelegramIcon sx={{ color: 'white' }} />
 					</Tooltip>
 				</a>
 				<a href="https://t.me/pinkpiggychanel" target={'_blank'}>
-					<Tooltip title="PinkPigyFinace Channel">
+					<Tooltip title="Telegram Channel">
 						<TelegramIcon sx={{ color: 'white' }} />
 					</Tooltip>
 				</a>
