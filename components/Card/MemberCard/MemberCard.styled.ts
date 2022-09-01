@@ -15,10 +15,6 @@ export const MemberCardWrap = styled.div`
 	font-style: normal;
 	cursor: pointer;
 
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-
 	&:before {
 		content: '';
 		position: absolute;

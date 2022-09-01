@@ -9,8 +9,9 @@ const Wrapper = styled(Container)`
 		margin-bottom: 24px;
 		text-align: center;
 	}
-	.list {
+	.MuiGrid-root.MuiGrid-container {
 		grid-auto-rows: 1fr;
+		place-items: normal;
 	}
 `
 
@@ -80,11 +81,7 @@ const OurTeam = () => {
 		<Section>
 			<Wrapper>
 				<Title>Our Team</Title>
-				<Grid
-					className="list"
-					container
-					spacing={{ xs: 2, md: 3 }}
-					gridAutoRows="1fr">
+				<Grid container spacing={{ xs: 2, md: 3 }} gridAutoRows="1fr">
 					{data.map((item, index) => (
 						<Grid key={index} item xs={6} md={4}>
 							<MemberCard member={item} />
