@@ -17,7 +17,7 @@ const Wrapper = styled(Container)`
 const data = [
 	{
 		name: 'Michael Fillin (CEO)',
-		avatarSrc: '/images/members/member-1.png',
+		avatarSrc: '/images/members/member-1.jpeg',
 		role: [
 			'Leader team Piggy (2022)',
 			'Co-founder Moonlap capital',
@@ -28,7 +28,7 @@ const data = [
 	},
 	{
 		name: 'Lyng Tan ( CMO)',
-		avatarSrc: '/images/members/member-2.png',
+		avatarSrc: '/images/members/member-2.jpeg',
 		role: [
 			'CMO of PiggyPink project (2022)',
 			'CMO of  The Leakteam call',
@@ -38,7 +38,7 @@ const data = [
 	},
 	{
 		name: 'Wong Liu ( Blockchain dev)',
-		avatarSrc: '/images/members/member-3.png',
+		avatarSrc: '/images/members/member-3.jpeg',
 		role: [
 			'5 years blockchain experience',
 			'Number of participating projects: 12',
@@ -47,7 +47,7 @@ const data = [
 	},
 	{
 		name: 'Aarush (Blockchain dev)',
-		avatarSrc: '/images/members/member-4.png',
+		avatarSrc: '/images/members/member-4.jpeg',
 		role: [
 			'In charge of blockchain and security of the project. The creator of the idea IRO',
 			'Live in London',
@@ -58,7 +58,7 @@ const data = [
 	},
 	{
 		name: 'Miley Agatha (In charge of the economy)',
-		avatarSrc: '/images/members/member-5.png',
+		avatarSrc: '/images/members/member-5.jpeg',
 		role: [
 			'Manager Economy Piggypink Finance',
 			'Finance Manager at GBank Capital',
@@ -68,7 +68,7 @@ const data = [
 	},
 	{
 		name: 'Peter Holk ( Designer)',
-		avatarSrc: '/images/members/member-6.png',
+		avatarSrc: '/images/members/member-6.jpeg',
 		role: [
 			"Nothing much, he's an artist, all Piggypink finance's images are drawn by him"
 		]
