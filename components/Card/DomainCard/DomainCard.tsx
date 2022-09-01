@@ -93,7 +93,7 @@ const DomainCard: FC<DomainCardProps> = ({
 			{domain.nft && (
 				<div>
 					<Image
-						src={'/nfts/0.jpeg'}
+						src={`/nfts/${domain.nft.nftURI}`}
 						alt="nft"
 						height={400}
 						width={400}
