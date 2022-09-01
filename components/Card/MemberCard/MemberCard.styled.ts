@@ -28,7 +28,7 @@ export const MemberCardWrap = styled.div`
 		bottom: 1px;
 		left: 1px;
 		border-radius: 10px;
-		background-color: ${({ theme }) => theme?.colors?.darkGrey4};
+		// background-color: ${({ theme }) => theme?.colors?.darkGrey4};
 	}
 
 	&:after {
@@ -40,7 +40,7 @@ export const MemberCardWrap = styled.div`
 		bottom: 0;
 		left: 0;
 		border-radius: 10px;
-		background-image: linear-gradient(136.74deg, #1470d6 1.01%, #cf1fbd 98.87%);
+		// background-image: linear-gradient(136.74deg, #1470d6 1.01%, #cf1fbd 98.87%);
 		transition: all 0.2s linear;
 
 		opacity: 0;
@@ -114,12 +114,13 @@ export const MemberCardWrap = styled.div`
 		line-height: 22px;
 		color: ${theme?.colors.gray4};
 
-		& > h4 {
+		& > li {
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
 			text-overflow: ellipse;
 			overflow: hidden;
+			text-align: left;
 		}
 
 		@media screen and (max-width: 900px) {

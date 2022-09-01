@@ -11,6 +11,7 @@ import { Description, TopPage } from 'components'
 // import { DomainCarousel } from 'components/pages/home/DomainCarousel'
 // import { InfoNumber } from 'components/pages/home/InfoNumber'
 import { MapEcosystem } from 'components/pages/home/MapEcosystem'
+import OurTeam from 'components/pages/home/OutTeam'
 import PartnerBacker from 'components/pages/home/PartnerBacker'
 import { RoadMap } from 'components/pages/home/RoadMap'
 import Tokenomics from 'components/pages/home/Tokenomics'
@@ -318,6 +319,8 @@ const Home: NextPage = () => {
 			<RoadMap />
 
 			<Tokenomics />
+
+			<OurTeam />
 
 			<PartnerBacker />
 		</>
