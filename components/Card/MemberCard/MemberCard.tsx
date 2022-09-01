@@ -1,11 +1,9 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { MemberCardProps } from '.'
 import { AvatarWrap, MemberCardWrap } from './MemberCard.styled'
 
 function MemberCard({ member }: MemberCardProps) {
-	console.log(member.role)
 	return (
 		<MemberCardWrap>
 			<AvatarWrap>
