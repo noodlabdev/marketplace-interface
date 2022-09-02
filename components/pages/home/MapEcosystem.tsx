@@ -95,7 +95,7 @@ export const MapEcosystem: FC = () => {
 					<Grid item lg={5} md={6} xs={12}>
 						<BoxBgGradient bgImage="linear-gradient(126.21deg, #1470D6 0%, #1F90CF 14.24%, #125DB0 49.56%, #1470D6 93.2%)">
 							<Title headingType="h3" size="xxs" className="boxTitle">
-								PIG Swap
+								PIG SWAP
 							</Title>
 							<Description size="sm" className="boxDescription">
 								Decentralized exchanges (AMM - DEX) where you can trade
