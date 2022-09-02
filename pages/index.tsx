@@ -21,17 +21,27 @@ import styled from 'styled-components'
 // import { BgGradient, Section } from 'styles'
 import 'swiper/css'
 
-const TopPageVideo = styled.video`
-	position: absolute;
-	left: 70%;
-	min-width: 100%;
-	min-height: 100%;
-	transform: translateX(-70%);
+const TopPageVideo = styled.div`
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	background-image: url('/images/banner.png');
 	@media screen and (max-width: 991px) {
-		left: 80%;
-		min-width: auto;
-		height: 100%;
+		transform: translateX(-47%);
+		width: 250%;
 	}
+	@media screen and (max-width: 450px) {
+		transform: translateX(-54.75%);
+	}
+	@media screen and (max-width: 400px) {
+		transform: translateX(-49.5%);
+	}
+	// transform: translateX(-50%);
+	// width: 100%;
+	// max-height: 100%;
+	// overflow: hidden;
 `
 
 const TypePageCustom = styled(TopPage)`
@@ -204,13 +214,13 @@ const Home: NextPage = () => {
 				}}
 				bgGradient={
 					<TopPageVideo
-						// src="/images/bg.jpeg"
-						// alt="bg"
-						ref={videoRef}
-						src="/video/banner.mp4"
-						autoPlay
-						loop
-						muted
+					// src="/images/banner.png"
+					// alt="bg"
+					// ref={videoRef}
+					// src="/video/banner.mp4"
+					// autoPlay
+					// loop
+					// muted
 					/>
 				}>
 				<Description className="desc">
