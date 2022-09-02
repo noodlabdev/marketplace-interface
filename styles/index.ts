@@ -158,6 +158,16 @@ export const TermContainer = styled.ul`
 			color: ${({ theme }) => theme?.colors?.gray4};
 			text-decoration: none;
 		}
+		svg {
+			margin: 8px 0;
+			cursor: pointer;
+			border-radius: 50%;
+			max-width: 20px;
+			height: auto;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
 	}
 `
 

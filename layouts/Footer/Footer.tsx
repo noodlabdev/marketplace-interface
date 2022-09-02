@@ -52,14 +52,43 @@ const Footer: FC = () => {
 				<div className="footer-term">
 					<TermContainer>
 						<li>
-							<Link href="/terms-of-use">
-								<a>Terms of Use</a>
-							</Link>
+							<a href="https://discord.gg/rGXYeVQVkD" target={'_blank'}>
+								<Tooltip title="Discord">
+									<div>
+										<DiscordIcon />
+									</div>
+								</Tooltip>
+							</a>
 						</li>
 						<li>
-							<Link href="/privacy-policy">
-								<a>Privacy Policy</a>
-							</Link>
+							<a
+								href="https://www.youtube.com/channel/UCnl5C9wqRAQxAfc4F-e25Mw"
+								target={'_blank'}>
+								<Tooltip title="Youtube">
+									<YouTubeIcon sx={{ color: 'white' }} />
+								</Tooltip>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/ppiggyfinance" target={'_blank'}>
+								<Tooltip title="Twitter">
+									<TwitterIcon sx={{ color: 'white' }} />
+								</Tooltip>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/pinkpigyfinace" target={'_blank'}>
+								<Tooltip title="Telegram">
+									<TelegramIcon sx={{ color: 'white' }} />
+								</Tooltip>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/pinkpiggychanel" target={'_blank'}>
+								<Tooltip title="Telegram Channel">
+									<TelegramIcon sx={{ color: 'white' }} />
+								</Tooltip>
+							</a>
 						</li>
 					</TermContainer>
 				</div>
