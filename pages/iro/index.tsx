@@ -2,7 +2,6 @@ import LinearProgress, {
 	linearProgressClasses
 } from '@mui/material/LinearProgress'
 import { Container } from '@mui/system'
-import { Title } from 'components'
 import styled from 'styled-components'
 
 const BorderLinearProgress = styled(LinearProgress)(() => ({
