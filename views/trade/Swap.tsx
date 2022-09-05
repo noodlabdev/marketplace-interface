@@ -138,7 +138,7 @@ const Swap: React.FC = () => {
 	const [tokensNeedApproved, setTokensNeedApproved] = useState<Token[]>([])
 	const [trade, setTrade] = useState<Trade | null>(null)
 	const [slippage, setSlippage] = useState<string>('0.5')
-	const [disabledMultihops, setDisabledMultihops] = useState<boolean>(true)
+	const [disabledMultihops, setDisabledMultihops] = useState<boolean>(false)
 	const [loadedPool, setLoadedPool] = useState<boolean>(false)
 	const [isCheckedHighPriceImpact, setIsCheckedHighPriceImpact] =
 		useState<boolean>(false)

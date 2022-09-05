@@ -94,9 +94,8 @@ const menus = [
 	{ key: 'trade', title: 'PIGSWAP', route: '/trade' },
 	{ key: 'dao', title: 'PIGDAO', route: '/dao' },
 	{ key: 'iro', title: 'PIGIRO', route: '/iro' },
-	{ key: 'market-place', title: 'NFT MARKETPLACE', route: '/marketplace' }
-	// { key: 'our-team', title: 'Our Team', route: '/our-team' },
-	// { key: 'whitepaper', title: 'Whitepaper', route: '/whitepaper' }
+	{ key: 'market-place', title: 'NFT MARKETPLACE', route: '/marketplace' },
+	{ key: 'staking', title: 'STAKING', route: '/staking' }
 ]
 
 export interface HeaderMenuProps {

@@ -228,7 +228,7 @@ const Home: NextPage = () => {
 					AMM, Pig DAO, Staking, Pig IRO, NFT Marketplace and more…
 				</Description>
 				<div className="wpp-wrapper">
-					<Link href="/whitepaper.pdf">
+					<Link href="https://piggy-pink.gitbook.io/pink-piggy-finance-whitepaper">
 						<a className="wpp" target="_blank" rel="noopener noreferrer">
 							WHITEPAPER
 						</a>

@@ -4,7 +4,13 @@ import ERC20ABI from 'abis/ERC20.json'
 import FactoryABI from 'abis/Factory.json'
 import PairABI from 'abis/Pair.json'
 import RouterABI from 'abis/Router.json'
-import { FACTORY_ADDRESS, ROUTER_ADDRESS } from 'constants/trade'
+import StakingABI from 'abis/Staking.json'
+import {
+	FACTORY_ADDRESS,
+	ROUTER_ADDRESS,
+	STAKE_TOKEN_ADDRESS,
+	STAKING_ADDRESS
+} from 'constants/trade'
 
 import AuctionABI from '../abis/Auction.json'
 import IERC721 from '../abis/IERC721.json'
@@ -94,4 +100,8 @@ export function getFactoryContract(library: Web3Provider, account?: string) {
 
 export function getRouterContract(library: Web3Provider, account?: string) {
 	return getContract(ROUTER_ADDRESS, RouterABI, library, account)
+}
+
+export function getStakingContract(library: Web3Provider, account?: string) {
+	return getContract(STAKING_ADDRESS, StakingABI, library, account)
 }
