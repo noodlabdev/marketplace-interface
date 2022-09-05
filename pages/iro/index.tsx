@@ -56,6 +56,10 @@ const Stack = styled.div`
 		text-align: left;
 		padding: 12px 24px 12px 12px;
 	}
+	@media screen and (max-width: 992px) {
+		flex-direction: column;
+		margin: 12px;
+	}
 `
 
 const VStack = styled.div`
