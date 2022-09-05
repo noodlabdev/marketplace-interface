@@ -136,6 +136,8 @@ function YourDomainCard({ nft, _refetch }: YourNFTCardProps) {
 						alt="nft"
 						height={400}
 						width={400}
+						layout="responsive"
+						objectPosition="center"
 					/>
 					<YourDomainCardName>ID: {nft.id}</YourDomainCardName>
 					<OnSaleWrap>
