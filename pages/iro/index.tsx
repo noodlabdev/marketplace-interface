@@ -5,10 +5,17 @@ import { Container } from '@mui/system'
 import { Title } from 'components'
 import styled from 'styled-components'
 
-const BorderLinearProgress = styled(LinearProgress)`
-	height: 40,
+const BorderLinearProgress = styled(LinearProgress)(() => ({
+	height: 10,
 	borderRadius: 5,
-`
+	[`&.${linearProgressClasses.colorPrimary}`]: {
+		backgroundColor: 'rgba(255, 255, 255, 0.2)'
+	},
+	[`& .${linearProgressClasses.bar}`]: {
+		borderRadius: 5,
+		backgroundColor: '#cb7fcc'
+	}
+}))
 
 const Wrapper = styled(Container)`
 	padding: 48px 0;
@@ -114,7 +121,7 @@ const IRO = () => {
 					<button>CLAIM</button>
 					<div>
 						<div className="title">Total Progress</div>
-						<BorderLinearProgress variant="determinate" value={20} />
+						<BorderLinearProgress variant="determinate" value={60} />
 						<HStack>
 							<div>Start time:</div>
 							<div>2:00 PM 2022-09-09</div>
