@@ -97,7 +97,7 @@ const IRO = () => {
 			 */}
 			<Stack className="content">
 				<VStack>
-					<div className="title">IFO TIMELINE</div>
+					<div className="title">IRO TIMELINE</div>
 					<HStack>
 						<div className="title">WHITELIST</div>
 						<div className="title">PUBLIC</div>
@@ -112,7 +112,7 @@ const IRO = () => {
 					</div>
 				</VStack>
 				<VStack>
-					<div className="title">IFO INFO</div>
+					<div className="title">IRO INFO</div>
 					<HStack>
 						<div className="title">Total Raise</div>
 						<div>500 BNB</div>
