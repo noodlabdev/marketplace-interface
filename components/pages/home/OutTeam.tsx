@@ -28,7 +28,7 @@ const data = [
 		]
 	},
 	{
-		name: 'Lyng Tan ( CMO)',
+		name: 'Lyng Tan (CMO)',
 		avatarSrc: '/images/members/member-2.jpeg',
 		role: [
 			'CMO of PiggyPink project (2022)',
@@ -38,7 +38,7 @@ const data = [
 		]
 	},
 	{
-		name: 'Wong Liu ( Blockchain dev)',
+		name: 'Wong Liu (Blockchain dev)',
 		avatarSrc: '/images/members/member-3.jpeg',
 		role: [
 			'5 years blockchain experience',
@@ -68,7 +68,7 @@ const data = [
 		]
 	},
 	{
-		name: 'Peter Holk ( Designer)',
+		name: 'Peter Holk (Designer)',
 		avatarSrc: '/images/members/member-6.jpeg',
 		role: [
 			"Nothing much, he's an artist, all Piggypink finance's images are drawn by him"

@@ -1,18 +1,27 @@
+import LinearProgress, {
+	linearProgressClasses
+} from '@mui/material/LinearProgress'
 import { Container } from '@mui/system'
 import { Title } from 'components'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const BorderLinearProgress = styled(LinearProgress)`
+	height: 40,
+	borderRadius: 5,
+`
+
+const Wrapper = styled(Container)`
 	padding: 48px 0;
 	color: #fff;
-	text-align: center;
-	.content {
-		display: flex;
-		justify-content: center;
+	display: flex;
+	justify-content: center;
+
+	.title {
+		font-weight: 600;
 	}
 	button {
 		color: #fff;
-		min-width: 120px;
+		width: 100%;
 		margin: 12px 0;
 		background: linear-gradient(310deg, #cb7fcc 25%, #fc52ff 100%);
 		padding: 12px;
@@ -26,12 +35,97 @@ const Wrapper = styled.div`
 	}
 `
 
+const Stack = styled.div`
+	width: 640px;
+	padding: 12px;
+	background: rgb(25, 16, 52);
+	border-radius: 32px;
+	box-shadow: rgb(25 19 38 / 10%) 0px 2px 12px -8px,
+		rgb(25 19 38 / 5%) 0px 1px 1px;
+	color: rgb(255, 255, 255);
+	display: flex;
+	max-width: 100%;
+	> div {
+		flex: 1;
+		text-align: left;
+		padding: 12px 24px 12px 12px;
+	}
+`
+
+const VStack = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	> div {
+		margin: 8px 0;
+	}
+	input {
+		flex: 1;
+		margin: 8px 12px 0 0;
+		background-color: rgba(255, 255, 255, 0.2);
+		padding: 10px 12px;
+		border-radius: 15px;
+		border: none;
+		outline: none;
+		color: #fff;
+	}
+`
+
+const HStack = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	> input {
+		flex: 1;
+	}
+`
+
 const IRO = () => {
 	return (
 		<Wrapper>
-			<Container>
-				<Title>Coming soon</Title>
-			</Container>
+			{/* <Title>Coming soon</Title>
+			 */}
+			<Stack className="content">
+				<VStack>
+					<div className="title">IFO TIMELINE</div>
+					<HStack>
+						<div className="title">WHITELIST</div>
+						<div className="title">PUBLIC</div>
+					</HStack>
+					<div>
+						<div>Buy</div>
+						<HStack>
+							<input />
+							<div>BNB</div>
+						</HStack>
+						<button>APPROVE</button>
+					</div>
+				</VStack>
+				<VStack>
+					<div className="title">IFO INFO</div>
+					<HStack>
+						<div className="title">Total Raise</div>
+						<div>500 BNB</div>
+					</HStack>
+					<HStack>
+						<div className="title">Ref $PIP</div>
+						<div>150 $PIP</div>
+					</HStack>
+					<button>CLAIM</button>
+					<div>
+						<div className="title">Total Progress</div>
+						<BorderLinearProgress variant="determinate" value={20} />
+						<HStack>
+							<div>Start time:</div>
+							<div>2:00 PM 2022-09-09</div>
+						</HStack>
+						<HStack>
+							<div>End time:</div>
+							<div>2:30 PM 2022-09-09</div>
+						</HStack>
+					</div>
+				</VStack>
+			</Stack>
 		</Wrapper>
 	)
 }

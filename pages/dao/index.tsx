@@ -51,9 +51,9 @@ const DAO = () => {
 								label="2. MEXC"
 							/>
 							<FormControlLabel
-								value="houibi"
+								value="houbi"
 								control={<Radio color="secondary" />}
-								label="3. HOUIBI"
+								label="3. Houbi"
 							/>
 						</RadioGroup>
 					</div>

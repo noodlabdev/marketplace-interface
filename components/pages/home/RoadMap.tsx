@@ -314,14 +314,14 @@ const RoadMapContainer = styled.div`
 
 const roadMaps = [
 	{
-		title: 'May 2022 - Phase 01',
+		title: 'Phase 01',
 		list: ['Idea', 'Assemble the team', 'Product development'],
 		top: -1.4,
 		left: 19.8,
 		placement: 'right'
 	},
 	{
-		title: 'Jun 2022 - Phase 02',
+		title: 'Phase 02',
 		list: [
 			'Landing Page',
 			'Social Creation and marketing',
@@ -335,7 +335,7 @@ const roadMaps = [
 		placement: 'bottom'
 	},
 	{
-		title: 'Jul 2022 - Phase 03',
+		title: 'Phase 03',
 		list: ['CMC, CGC listing', 'Pig Dao', 'Staking'],
 
 		top: 54,
@@ -343,7 +343,7 @@ const roadMaps = [
 		placement: 'top'
 	},
 	{
-		title: 'Aug - Nov 2022 - Phase 04',
+		title: 'Phase 04',
 		list: [
 			'CEX listing',
 			'Pig IRO launchpad',
