@@ -13,7 +13,6 @@ import LinearProgress, {
 	linearProgressClasses
 } from '@mui/material/LinearProgress'
 import { Container } from '@mui/system'
-import { Title } from 'components'
 import TransactionLoading from 'components/TransactionLoading'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import styled from 'styled-components'
@@ -23,18 +22,6 @@ import {
 	stake,
 	withdrawStake
 } from 'utils/callContract'
-
-const BorderLinearProgress = styled(LinearProgress)(() => ({
-	height: 10,
-	borderRadius: 5,
-	[`&.${linearProgressClasses.colorPrimary}`]: {
-		backgroundColor: 'rgba(255, 255, 255, 0.2)'
-	},
-	[`& .${linearProgressClasses.bar}`]: {
-		borderRadius: 5,
-		backgroundColor: '#cb7fcc'
-	}
-}))
 
 const Wrapper = styled(Container)`
 	padding: 48px 0;
