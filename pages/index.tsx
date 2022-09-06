@@ -330,7 +330,7 @@ const Home: NextPage = () => {
 
 			<Tokenomics />
 
-			<OurTeam />
+			{/* <OurTeam /> */}
 
 			<PartnerBacker />
 		</>

@@ -100,7 +100,7 @@ const Footer: FC = () => {
 				</div>
 			</Container>
 			<SocialIcons>
-				<a href="https://discord.gg/rGXYeVQVkD" target={'_blank'}>
+				<a href="http://discord.gg/pinkpiggy" target={'_blank'}>
 					<Tooltip title="Discord">
 						<div>
 							<DiscordIcon />
