@@ -9,9 +9,6 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import ShareIcon from '@mui/icons-material/Share'
 import { Modal } from '@mui/material'
-import LinearProgress, {
-	linearProgressClasses
-} from '@mui/material/LinearProgress'
 import { Container } from '@mui/system'
 import TransactionLoading from 'components/TransactionLoading'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
