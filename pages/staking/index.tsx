@@ -179,6 +179,7 @@ const Staking = () => {
 	const handleGetStakeInfo = useCallback(async () => {
 		if (!account || !library) return
 		const stakeInfo = await getStakeInfo(library, account)
+		console.log(stakeInfo)
 		setStakeInfo(stakeInfo)
 	}, [account, library, refresh])
 
