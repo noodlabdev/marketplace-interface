@@ -52,7 +52,7 @@ const Footer: FC = () => {
 				<div className="footer-term">
 					<TermContainer>
 						<li>
-							<a href="https://discord.gg/rGXYeVQVkD" target={'_blank'}>
+							<a href="https://discord.com/invite/9JCk7UMXc7" target={'_blank'}>
 								<Tooltip title="Discord">
 									<div>
 										<DiscordIcon />
@@ -77,7 +77,7 @@ const Footer: FC = () => {
 							</a>
 						</li>
 						<li>
-							<a href="https://t.me/pinkpigyfinace" target={'_blank'}>
+							<a href="https://t.me/pinkpiggyfinance" target={'_blank'}>
 								<Tooltip title="Telegram">
 									<TelegramIcon sx={{ color: 'white' }} />
 								</Tooltip>
@@ -100,7 +100,7 @@ const Footer: FC = () => {
 				</div>
 			</Container>
 			<SocialIcons>
-				<a href="http://discord.gg/pinkpiggy" target={'_blank'}>
+				<a href="https://discord.com/invite/9JCk7UMXc7" target={'_blank'}>
 					<Tooltip title="Discord">
 						<div>
 							<DiscordIcon />
@@ -119,7 +119,7 @@ const Footer: FC = () => {
 						<TwitterIcon sx={{ color: 'white' }} />
 					</Tooltip>
 				</a>
-				<a href="https://t.me/pinkpigyfinace" target={'_blank'}>
+				<a href="https://t.me/pinkpiggyfinance" target={'_blank'}>
 					<Tooltip title="Telegram">
 						<TelegramIcon sx={{ color: 'white' }} />
 					</Tooltip>
