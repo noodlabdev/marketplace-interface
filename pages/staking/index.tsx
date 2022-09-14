@@ -160,7 +160,6 @@ export const ModalWrapper = styled.div`
 
 const Staking = () => {
 	const { account, library } = useActiveWeb3React()
-	console.log(library)
 
 	const [isExpand, setIsExpand] = useState<boolean>(false)
 	const [open, setOpen] = useState(false)
@@ -180,7 +179,6 @@ const Staking = () => {
 	const handleGetStakeInfo = useCallback(async () => {
 		if (!library) return
 		const stakeInfo = await getStakeInfo(library, account)
-		console.log(stakeInfo)
 		setStakeInfo(stakeInfo)
 	}, [account, library, refresh])
 
@@ -202,8 +200,7 @@ const Staking = () => {
 			setSubmitting(false)
 		} catch (error: any) {
 			setSubmitting(false)
-			console.log(error)
-			alert(error.message)
+			alert(error.reason)
 		}
 	}
 
@@ -217,8 +214,7 @@ const Staking = () => {
 			setSubmitting(false)
 		} catch (error: any) {
 			setSubmitting(false)
-			console.log(error)
-			alert(error.message)
+			alert(error.reason)
 		}
 	}
 
@@ -236,8 +232,7 @@ const Staking = () => {
 			setSubmitting(false)
 		} catch (error: any) {
 			setSubmitting(false)
-			console.log(error)
-			alert(error.message)
+			alert(error.reason)
 		}
 	}
 
@@ -295,7 +290,7 @@ const Staking = () => {
 					</HStack>
 					<HStack>
 						<div>
-							<div className="sub-title">BNB EARNED:</div>
+							<div className="sub-title">EARNED:</div>
 							<div>
 								{formatEther(stakeInfo.pendingReward?.toString() ?? '0')}
 							</div>
