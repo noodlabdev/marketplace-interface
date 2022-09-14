@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { MaxUint256 } from '@ethersproject/constants'
+import { AddressZero, MaxUint256 } from '@ethersproject/constants'
 import { Web3Provider } from '@ethersproject/providers/lib/web3-provider'
 import { parseEther } from '@ethersproject/units'
 import { NFT_METHODS } from 'constants/constants'
@@ -122,13 +122,17 @@ export const claim = async (
 /**
  * Staking handlers
  *  */
-export const getStakeInfo = async (library: Web3Provider, account: string) => {
-	const stakingContract = getStakingContract(library, account)
+export const getStakeInfo = async (
+	library: Web3Provider,
+	account: string | null | undefined
+) => {
+	const stakingContract = getStakingContract(library)
+	const _account = account ?? AddressZero
 	const [totalSupply, apr, balanceOf, pendingReward] = await Promise.all([
 		callContract(stakingContract, 'totalSupply', []),
 		callContract(stakingContract, 'rewardRate', []),
-		callContract(stakingContract, 'balanceOf', [account]),
-		callContract(stakingContract, 'pendingReward', [account])
+		callContract(stakingContract, 'balanceOf', [_account]),
+		callContract(stakingContract, 'pendingReward', [_account])
 	])
 	return {
 		totalSupply,

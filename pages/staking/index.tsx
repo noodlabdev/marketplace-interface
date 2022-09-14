@@ -160,6 +160,7 @@ export const ModalWrapper = styled.div`
 
 const Staking = () => {
 	const { account, library } = useActiveWeb3React()
+	console.log(library)
 
 	const [isExpand, setIsExpand] = useState<boolean>(false)
 	const [open, setOpen] = useState(false)
@@ -177,7 +178,7 @@ const Staking = () => {
 	const handleClose = () => setOpen(false)
 
 	const handleGetStakeInfo = useCallback(async () => {
-		if (!account || !library) return
+		if (!library) return
 		const stakeInfo = await getStakeInfo(library, account)
 		console.log(stakeInfo)
 		setStakeInfo(stakeInfo)
